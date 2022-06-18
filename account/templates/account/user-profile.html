@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %} Mi Perfil {% endblock %}
+{% block title %} Perfil de Usuario {% endblock %}
 
 {% block content %}
 {% load static %}
@@ -7,39 +7,37 @@
 
     <div class="nk-gap-2"></div>
     <div class="custom-index-card-container custom-extra-padding">
-        <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Mi</span> Perfil</span></h3>
+        <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Perfil</span> de Usuario</span></h3>
         <div class="row">
             <div class="col-md-6">
                 <div>
-                    <img src="{{ request.user.profile_image.url }}" width="100" height="100" class="rounded-circle" alt="{{ request.user.username }}">
+                    <img src="{{ data.profile_image.url }}" width="100" height="100" class="rounded-circle" alt="{{ data.username }}">
                 </div>
             </div>
+            {% if data.id == request.user.id %}
             <div class="col-md-6 custom-profile-btn-edit">
                 <div>
                     <a href="{% url 'profile-edit' %}" class="nk-btn nk-btn-rounded nk-btn-color-main-1">Editar</a>
                     <!-- <button class="nk-btn nk-btn-rounded nk-btn-color-main-1">Editar</button> -->
                 </div>
             </div>
+            {% endif %}
         </div>
         <div class="custom-profile-label">Nombre:</div>
         <div class="custom-profile-line">
-            {% if request.user.fname %} {{ request.user.fname}} {% else %} &nbsp; {% endif %} <br>
+            {% if data.fname %} {{ data.fname}} {% else %} &nbsp; {% endif %} <br>
         </div>
         <div class="custom-profile-label">Apellido:</div>
         <div class="custom-profile-line">
-            {% if request.user.lname %} {{ request.user.lname}} {% else %} &nbsp; {% endif %} <br>
+            {% if data.lname %} {{ data.lname}} {% else %} &nbsp; {% endif %} <br>
         </div>
         <div class="custom-profile-label">Usuario:</div>
         <div class="custom-profile-line">
-            {% if request.user.username %} {{ request.user.username}} {% else %} &nbsp; {% endif %} <br>
-        </div>
-        <div class="custom-profile-label">E-mail:</div>
-        <div class="custom-profile-line">
-            {% if request.user.email %} {{ request.user.email}} {% else %} &nbsp; {% endif %} <br>
+            {% if data.username %} {{ data.username}} {% else %} &nbsp; {% endif %} <br>
         </div>
         <div class="custom-profile-label">Biograf&iacute;a:</div>
         <div class="custom-profile-line">
-            {% if request.user.bio %} {{ request.user.bio}} {% else %} &nbsp; {% endif %} <br>
+            {% if data.bio %} {{ data.bio}} {% else %} &nbsp; {% endif %} <br>
         </div>
     </div>
 
