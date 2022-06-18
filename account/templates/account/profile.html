@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %} Mi Perfil {% endblock %}
+
+{% block content %}
+{% load static %}
+<div class="container custom-extra-height">
+
+    <div class="nk-gap-2"></div>
+    <div class="custom-index-card-container custom-extra-padding">
+        <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Nueva</span> Cuenta</span></h3>
+        <div class="nk-gap"></div>
+        <form action="" class="nk-form" method="post">
+            {% csrf_token %}
+            <label for="username">Nombre de usuario</label>
+            <input type="text" name="username" class="form-control" maxlength="80">
+            <label for="email">E-mail</label>
+            <input type="email" name="email" class="form-control" maxlength="80">
+            <!-- <small class="text-danger">Necesario. Sirve para iniciar sesi&oacute;n.</small> -->
+            <label for="password1">Contrase&ntilde;a</label>
+            <input type="password" name="password1" class="form-control" maxlength="80">
+            <label for="password2">Repita su Contrase&ntilde;a</label>
+            <input type="password" name="password2" class="form-control" maxlength="80">
+            <br><div class="mnt-5">
+                <small><a href="{% url 'login' %}">Ya est&aacute; registrado? Inicie Sesi&oacute;n</a></small>
+            </div>
+            <div class="nk-gap"></div>
+            <button type="submit" class="nk-btn nk-btn-rounded nk-btn-color-main-1">Registrarse</button>
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>GamerBlog</title>
+        <meta name="description" content="Proyecto final del curso de Python de Coderhouse, comision 31075, de Aracena Cesar, Orozco Jose y Orozco Esteban" />
+        <meta name="keywords" content="gaming, games, blog, python, django" />
+        <meta name="author" content="Aracena Cesar, Orozco Jose y Orozco Esteban" />
+        <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7cOpen+Sans:400,700" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="assets/vendor/bootstrap/dist/css/bootstrap.min.css" />
+        <script defer src="assets/vendor/fontawesome-free/js/all.js"></script>
+        <script defer src="assets/vendor/fontawesome-free/js/v4-shims.js"></script>
+        <link rel="stylesheet" href="assets/vendor/ionicons/css/ionicons.min.css" />
+        <link rel="stylesheet" href="assets/vendor/flickity/dist/flickity.min.css" />
+        <link rel="stylesheet" type="text/css" href="assets/vendor/photoswipe/dist/photoswipe.css" />
+        <link rel="stylesheet" type="text/css" href="assets/vendor/photoswipe/dist/default-skin/default-skin.css" />
+        <link rel="stylesheet" href="assets/vendor/bootstrap-slider/dist/css/bootstrap-slider.min.css" />
+        <link  rel="stylesheet" type="text/css" href="assets/vendor/summernote/dist/summernote-bs4.css" />
+        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+        <link rel="stylesheet" href="assets/css/custom.css" />
+    </head>
+
+    <body>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+        <!-- <ul class="dropdown">
+            <li class="active">
+                <a href="forum.html"> Forum </a>
+            </li>
+            <li>
+                <a href="forum-topics.html"> Topics </a>
+            </li>
+            <li>
+                <a href="forum-single-topic.html"> Single Topic </a>
+            </li>
+        </ul> -->
+
+        <header class="nk-header nk-header-opaque">
+            <nav class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-autohide">
+                <div class="container">
+                    <div class="nk-nav-table">
+                        <a href="index.html" class="nk-nav-logo">
+                            <img src="assets/images/logo-01.svg" alt="GoodGames" width="199" />
+                        </a>
+                        <ul class="nk-nav nk-nav-right d-none d-lg-table-cell" data-nav-mobile="#nk-nav-mobile">
+                            <li>
+                                <a href="/"> Inicio </a>
+                            </li>
+                            <li>
+                                <a href="/blog.html"> Blog </a>
+                            </li>
+                            <li>
+                                <a href="/contactenos.html"> Cont&aacute;ctenos </a>
+                            </li>
+                            <li>
+                                <a href="#"> Acerca de Nosotros </a>
+                            </li>
+                            <li>
+                                <a href="#" data-toggle="modal" data-target="#modalSearch">
+                                    <span class="fa fa-search"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-toggle="modal" data-target="#modalLogin">
+                                    <span class="fa fa-user"></span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nk-nav nk-nav-right nk-nav-icons">
+                            <li class="single-icon d-lg-none">
+                                <a href="#" class="no-link-effect" data-nav-toggle="#nk-nav-mobile">
+                                    <span class="nk-icon-burger">
+                                        <span class="nk-t-1"></span>
+                                        <span class="nk-t-2"></span>
+                                        <span class="nk-t-3"></span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div id="nk-nav-mobile" class="nk-navbar nk-navbar-side nk-navbar-right-side nk-navbar-overlay-content d-lg-none">
+            <div class="nano">
+                <div class="nano-content">
+                    <a href="index.html" class="nk-nav-logo">
+                        <img src="assets/images/logo.svg" alt="" width="120">
+                    </a>
+                    <div class="nk-navbar-mobile-content">
+                        <ul class="nk-nav">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nk-main">
+            <div class="nk-gap-2"></div>
+            <div class="container">
+
+                <div class="nk-gap-2"></div>
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="">
+                            <div class="swiper-slide nk-image-slider-item">
+                                <img src="assets/images/slider-01.jpg" class="nk-image-slider-img" alt="">
+                                <div class="nk-image-slider-content">
+                                    <h3 class="h4">As we Passed, I remarked</h3>
+                                    <p class="text-white">As we passed, I remarked a beautiful church-spire rising above some old elms in the park; and before them, in the midst of a lawn, chimneys covered with ivy, and the windows shining in the sun.</p>
+                                    <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-hover-color-main-1">Leer +</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide">Slide 2</div>
+                        <div class="swiper-slide">Slide 3</div>
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+                
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                
+                    <!-- If we need scrollbar -->
+                    <div class="swiper-scrollbar"></div>
+                </div>
+
+                <!-- <div class="nk-image-slider" data-autoplay="8000">
+                    <div class="nk-image-slider-item">
+                        <img src="assets/images/slide-1.jpg" alt="" class="nk-image-slider-img" data-thumb="assets/images/slide-1-thumb.jpg">
+                        <div class="nk-image-slider-content">
+                            <h3 class="h4">As we Passed, I remarked</h3>
+                            <p class="text-white">As we passed, I remarked a beautiful church-spire rising above some old elms in the park; and before them, in the midst of a lawn, chimneys covered with ivy, and the windows shining in the sun.</p>
+                            <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-hover-color-main-1">Leer +</a>
+                        </div>
+                    </div>
+                    <div class="nk-image-slider-item">
+                        <img src="assets/images/slide-2.jpg" alt="" class="nk-image-slider-img" data-thumb="assets/images/slide-2-thumb.jpg">
+                        <div class="nk-image-slider-content">
+                            <h3 class="h4">He made his passenger captain of one</h3>
+                            <p class="text-white">Now the races of these two have been for some ages utterly extinct, and besides to discourse any further of them would not be at all to my purpose. But the concern I have most at heart is for our Corporation of Poets, from whom I am preparing a petition to your Highness, to be subscribed with the names of one...</p>
+                            <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-hover-color-main-1">Leer +</a>
+                        </div>
+                    </div>
+                    <div class="nk-image-slider-item">
+                        <img src="assets/images/slide-3.jpg" alt="" class="nk-image-slider-img" data-thumb="assets/images/slide-3-thumb.jpg">
+                    </div>
+                    <div class="nk-image-slider-item">
+                        <img src="assets/images/slide-4.jpg" alt="" class="nk-image-slider-img" data-thumb="assets/images/slide-4-thumb.jpg">
+                        <div class="nk-image-slider-content">
+                            <h3 class="h4">At length one of them called out in a clear</h3>
+                            <p class="text-white">TJust then her head struck against the roof of the hall: in fact she was now more than nine feet high...</p>
+                            <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-hover-color-main-1">Leer +</a>
+                        </div>
+                    </div>
+                    <div class="nk-image-slider-item">
+                        <img src="assets/images/slide-5.jpg" alt="" class="nk-image-slider-img" data-thumb="assets/images/slide-5-thumb.jpg">
+                        <div class="nk-image-slider-content">
+                            <h3 class="h4">For good, too though, in consequence</h3>
+                            <p class="text-white">She gave my mother such a turn, that I have always been convinced I am indebted to Miss Betsey for having been born on a Friday. The word was appropriate to the moment.</p>
+                            <p class="text-white">My mother was so much worse that Peggotty, coming in with the teaboard and candles, and seeing at a glance how ill she was, - as Miss Betsey might have done sooner if there had been light enough, - conveyed her upstairs to her own room with all speed; and immediately dispatched Ham Peggotty, her nephew, who had been for some days past secreted in the house...</p>
+                            <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-hover-color-main-1">Leer +</a>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="nk-gap-2"></div>
+                <div class="row vertical-gap">
+                    <div class="col-lg-4">
+                        <a href="#" class="custom-card-button-link">
+                            <div class="nk-feature-1 zoom">
+                                <div class="nk-feature-icon">
+                                    <img src="assets/images/icon-mouse.svg" alt="">
+                                </div>
+                                <div class="nk-feature-cont">
+                                    <h3 class="nk-feature-title">PC</h3>
+                                    <h4 class="nk-feature-title text-main-1">View Games</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4">
+                        <a href="#" class="custom-card-button-link">
+                            <div class="nk-feature-1 zoom">
+                                <div class="nk-feature-icon">
+                                    <img src="assets/images/icon-gamepad.svg" alt="">
+                                </div>
+                                <div class="nk-feature-cont">
+                                    <h3 class="nk-feature-title">PS4</h3>
+                                    <h4 class="nk-feature-title text-main-1">View Games</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4">
+                        <a href="#" class="custom-card-button-link">
+                            <div class="nk-feature-1 zoom">
+                                <div class="nk-feature-icon">
+                                    <img src="assets/images/icon-gamepad-2.svg" alt="">
+                                </div>
+                                <div class="nk-feature-cont">
+                                    <h3 class="nk-feature-title">Xbox</h3>
+                                    <h4 class="nk-feature-title text-main-1">View Games</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nk-gap-2"></div>
+                <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Ultimas</span> Noticias</span></h3>
+                <div class="nk-gap"></div>
+                <div class="nk-blog-grid">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="nk-blog-post">
+                                <a href="blog-article.html" class="nk-post-img">
+                                    <img src="assets/images/post-5-mid.jpg" alt="He made his passenger captain of one">
+                                    <span class="nk-post-comments-count">13</span>
+                                    <span class="nk-post-categories">
+                                        <span class="bg-main-5">Indie</span>
+                                    </span>
+                                </a>
+                                <div class="custom-index-card-container">
+                                    <div class="nk-gap"></div>
+                                    <h2 class="nk-post-title h4"><a href="blog-article.html">He made his passenger captain of one</a></h2>
+                                    <div class="nk-post-text">
+                                        <p>Just then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door...</p>
+                                    </div>
+                                    <div class="nk-gap"></div>
+                                    <a href="blog-article.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Leer +</a>
+                                    <div class="nk-post-date float-right"><span class="fa fa-calendar"></span> Jul 23, 2018</div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="nk-blog-post">
+                                <a href="blog-article.html" class="nk-post-img">
+                                    <img src="assets/images/post-6-mid.jpg" alt="At first, for some time, I was not able to answer">
+                                    <span class="nk-post-comments-count">0</span>
+                                    <span class="nk-post-categories">
+                                        <span class="bg-main-5">Racing</span>
+                                    </span>
+                                </a>
+                                <div class="custom-index-card-container">
+                                    <div class="nk-gap"></div>
+                                    <h2 class="nk-post-title h4"><a href="blog-article.html">At first, for some time, I was not able to answer</a></h2>
+                                    <div class="nk-post-text">
+                                        <p>This little wandering journey, without settled place of abode, had been so unpleasant to me, that my own house, as I called it to myself, was a perfect settlement to me compared to that...</p>
+                                    </div>
+                                    <div class="nk-gap"></div>
+                                        <a href="blog-article.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Leer +</a>
+                                    <div class="nk-post-date float-right"><span class="fa fa-calendar"></span> Jul 3, 2018</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="nk-blog-post">
+                                <a href="blog-article.html" class="nk-post-img">
+                                    <img src="assets/images/post-6-mid.jpg" alt="At first, for some time, I was not able to answer">
+                                    <span class="nk-post-comments-count">0</span>
+                                    <span class="nk-post-categories">
+                                        <span class="bg-main-5">Racing</span>
+                                    </span>
+                                </a>
+                                <div class="custom-index-card-container">
+                                    <div class="nk-gap"></div>
+                                    <h2 class="nk-post-title h4"><a href="blog-article.html">At first, for some time, I was not able to answer</a></h2>
+                                    <div class="nk-post-text">
+                                        <p>This little wandering journey, without settled place of abode, had been so unpleasant to me, that my own house, as I called it to myself, was a perfect settlement to me compared to that...</p>
+                                    </div>
+                                    <div class="nk-gap"></div>
+                                        <a href="blog-article.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Leer +</a>
+                                    <div class="nk-post-date float-right"><span class="fa fa-calendar"></span> Jul 3, 2018</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="nk-blog-post">
+                                <a href="blog-article.html" class="nk-post-img">
+                                    <img src="assets/images/post-6-mid.jpg" alt="At first, for some time, I was not able to answer">
+                                    <span class="nk-post-comments-count">0</span>
+                                    <span class="nk-post-categories">
+                                        <span class="bg-main-5">Racing</span>
+                                    </span>
+                                </a>
+                                <div class="custom-index-card-container">
+                                    <div class="nk-gap"></div>
+                                    <h2 class="nk-post-title h4"><a href="blog-article.html">At first, for some time, I was not able to answer</a></h2>
+                                    <div class="nk-post-text">
+                                        <p>This little wandering journey, without settled place of abode, had been so unpleasant to me, that my own house, as I called it to myself, was a perfect settlement to me compared to that...</p>
+                                    </div>
+                                    <div class="nk-gap"></div>
+                                        <a href="blog-article.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Leer +</a>
+                                    <div class="nk-post-date float-right"><span class="fa fa-calendar"></span> Jul 3, 2018</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nk-gap-2"></div>
+                <div class="row vertical-gap">
+                    <div class="col-lg-12">
+
+                        <h3 class="nk-decorated-h-2">
+                            <span><span class="text-main-1">Ultimos</span> Articulos</span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="nk-gap"></div>
+                <div class="nk-blog-grid">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="nk-blog-post">
+                                <a href="blog-article.html" class="nk-post-img">
+                                    <img src="assets/images/post-5-mid.jpg" alt="He made his passenger captain of one">
+                                    <span class="nk-post-comments-count">13</span>
+                                </a>
+                                <div class="custom-index-card-container">
+                                    <div class="nk-gap"></div>
+                                    <h2 class="nk-post-title h4"><a href="blog-article.html">He made his passenger captain of one</a></h2>
+                                    <div class="nk-post-by">
+                                        <img src="assets/images/avatar-3.jpg" alt="Wolfenstein" class="rounded-circle" width="35"> by <a href="https://nkdev.info">Wolfenstein</a> in Jul 23, 2018
+                                    </div>
+                                    <div class="nk-gap"></div>
+                                    <div class="nk-post-text">
+                                        <p>Just then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door...</p>
+                                    </div>
+                                    <div class="nk-gap"></div>
+                                    <a href="blog-article.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Leer +</a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="nk-blog-post">
+                                <a href="blog-article.html" class="nk-post-img">
+                                    <img src="assets/images/post-5-mid.jpg" alt="He made his passenger captain of one">
+                                    <span class="nk-post-comments-count">13</span>
+                                </a>
+                                <div class="custom-index-card-container">
+                                    <div class="nk-gap"></div>
+                                    <h2 class="nk-post-title h4"><a href="blog-article.html">He made his passenger captain of one</a></h2>
+                                    <div class="nk-post-by">
+                                        <img src="assets/images/avatar-3.jpg" alt="Wolfenstein" class="rounded-circle" width="35"> by <a href="https://nkdev.info">Wolfenstein</a> in Jul 23, 2018
+                                    </div>
+                                    <div class="nk-gap"></div>
+                                    <div class="nk-post-text">
+                                        <p>Just then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door...</p>
+                                    </div>
+                                    <div class="nk-gap"></div>
+                                    <a href="blog-article.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Leer +</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="nk-blog-post">
+                                <a href="blog-article.html" class="nk-post-img">
+                                    <img src="assets/images/post-5-mid.jpg" alt="He made his passenger captain of one">
+                                    <span class="nk-post-comments-count">13</span>
+                                </a>
+                                <div class="custom-index-card-container">
+                                    <div class="nk-gap"></div>
+                                    <h2 class="nk-post-title h4"><a href="blog-article.html">He made his passenger captain of one</a></h2>
+                                    <div class="nk-post-by">
+                                        <img src="assets/images/avatar-3.jpg" alt="Wolfenstein" class="rounded-circle" width="35"> by <a href="https://nkdev.info">Wolfenstein</a> in Jul 23, 2018
+                                    </div>
+                                    <div class="nk-gap"></div>
+                                    <div class="nk-post-text">
+                                        <p>Just then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door...</p>
+                                    </div>
+                                    <div class="nk-gap"></div>
+                                    <a href="blog-article.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Leer +</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="nk-gap-2"></div>
+
+                <footer class="nk-footer">
+                    <div class="container">
+                        <div class="nk-gap-3"></div>
+                        <div class="row vertical-gap">
+                            <div class="col-md-12">
+                                <div class="nk-widget">
+                                    <h4 class="nk-widget-title">
+                                        <span class="text-main-1">Cont&aacute;ctese</span> con nosotros
+                                    </h4>
+                                    <div class="nk-widget-content">
+                                        <form action="php/ajax-contact-form.php" class="nk-form nk-form-ajax">
+                                            <div class="row vertical-gap sm-gap">
+                                                <div class="col-md-4">
+                                                    <input type="email" class="form-control required" name="email" placeholder="E-mail *" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <select name="cars" id="cars" class="form-control required">
+                                                        <option value="">
+                                                            Motivo *
+                                                        </option>
+                                                        <option value="saab">
+                                                            Saab
+                                                        </option>
+                                                        <option value="mercedes">
+                                                            Mercedes
+                                                        </option>
+                                                        <option value="audi">
+                                                            Audi
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input type="text" class="form-control required" name="name" placeholder="Nombre *" />
+                                                </div>
+                                            </div>
+                                            <div class="nk-gap"></div>
+                                            <textarea class="form-control required" name="message" rows="5" placeholder="Mensaje *"></textarea>
+                                            <div class="nk-gap-1"></div>
+                                            <button class="nk-btn nk-btn-rounded nk-btn-color-white">
+                                                <span>Enviar</span>
+                                                <span class="icon">
+                                                    <span class="fa fa-envelope"></span>
+                                                </span>
+                                            </button>
+                                            <div class="nk-form-response-success"></div>
+                                            <div class="nk-form-response-error"></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nk-gap-3"></div>
+                    </div>
+                    <div class="nk-copyright">
+                        <div class="container">
+                            <div class="nk-copyright-left">
+                                Copyright &copy; 2022
+                                <a href="#" target="_blank">GAMERBLOG</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+        </div>
+
+        <!-- <img class="nk-page-background-top" src="assets/images/bg-4.jpg" alt="" /> -->
+        <!-- <img class="nk-page-background-bottom" src="assets/images/bg-bottom-1.jpg" alt="" /> -->
+
+        <div class="nk-modal modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span class="fa fa-times"></span>
+                        </button>
+                        <h4 class="mb-0">Buscar</h4>
+                        <div class="nk-gap-1"></div>
+                        <form action="#" class="nk-form nk-form-style-1">
+                            <input type="text" value="" name="search" class="form-control" placeholder="Ingrese su b&uacute;squeda y presione Enter" autofocus />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nk-modal modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span class="fa fa-times"></span>
+                        </button>
+                        <h4 class="mb-0">
+                            <span class="text-main-1">Log</span>In
+                        </h4>
+                        <div class="nk-gap-1"></div>
+                        <form action="#" class="nk-form text-white">
+                            <div class="row vertical-gap">
+                                <div class="col-md-6">
+                                    Con e-mail y contrase&ntilde;a:
+                                    <div class="nk-gap"></div>
+                                    <input type="email" value="" name="email" class="form-control" placeholder="E-mail" />
+                                    <div class="nk-gap"></div>
+                                    <input type="password" value="" name="password" class="required form-control" placeholder="Contrase&ntilde;a" />
+                                </div>
+                                <div class="col-md-6">
+                                    O sus redes sociales:
+                                    <div class="nk-gap"></div>
+                                    <ul class="nk-social-links-2">
+                                        <li>
+                                            <a class="nk-social-facebook" href="#" ><span class="fab fa-facebook"></span></a>
+                                        </li>
+                                        <li>
+                                            <a class="nk-social-google-plus" href="#" ><span class="fab fa-google-plus" ></span></a>
+                                        </li>
+                                        <li>
+                                            <a class="nk-social-twitter" href="#" ><span class="fab fa-twitter"></span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="nk-gap-1"></div>
+                            <div class="row vertical-gap">
+                                <div class="col-md-6">
+                                    <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-block" >Ingresar</a>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mnt-5">
+                                        <small><a href="#">Olvid&oacute; su contrase&ntilde;a?</a></small>
+                                    </div>
+                                    <div class="mnt-5">
+                                        <small><a href="#">No ten&eacute;s cuenta? Registrate!!!!</a></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+        <script src="assets/vendor/object-fit-images/dist/ofi.min.js"></script>
+        <script src="assets/vendor/gsap/src/minified/TweenMax.min.js"></script>
+        <script src="assets/vendor/gsap/src/minified/plugins/ScrollToPlugin.min.js"></script>
+        <script src="assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+        <script src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="assets/vendor/sticky-kit/dist/sticky-kit.min.js"></script>
+        <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
+        <script src="assets/vendor/jarallax/dist/jarallax-video.min.js"></script>
+        <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/vendor/flickity/dist/flickity.pkgd.min.js"></script>
+        <script src="assets/vendor/photoswipe/dist/photoswipe.min.js"></script>
+        <script src="assets/vendor/photoswipe/dist/photoswipe-ui-default.min.js"></script>
+        <script src="assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="assets/vendor/jquery-countdown/dist/jquery.countdown.min.js"></script>
+        <script src="assets/vendor/moment/min/moment.min.js"></script>
+        <script src="assets/vendor/moment-timezone/builds/moment-timezone-with-data.min.js"></script>
+        <script src="assets/vendor/hammerjs/hammer.min.js"></script>
+        <script src="assets/vendor/nanoscroller/bin/javascripts/jquery.nanoscroller.js"></script>
+        <script src="assets/vendor/soundmanager2/script/soundmanager2-nodebug-jsmin.js"></script>
+        <script src="assets/vendor/bootstrap-slider/dist/bootstrap-slider.min.js"></script>
+        <script src="assets/vendor/summernote/dist/summernote-bs4.min.js"></script>
+        <script src="assets/plugins/nk-share/nk-share.js"></script>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+        <script src="assets/js/custom.js"></script>
+    </body>
+</html>

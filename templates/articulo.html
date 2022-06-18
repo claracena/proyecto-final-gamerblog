@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>GamerBlog</title>
+        <meta name="description" content="Proyecto final del curso de Python de Coderhouse, comision 31075, de Aracena Cesar, Orozco Jose y Orozco Esteban" />
+        <meta name="keywords" content="gaming, games, blog, python, django" />
+        <meta name="author" content="Aracena Cesar, Orozco Jose y Orozco Esteban" />
+        <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7cOpen+Sans:400,700" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="assets/vendor/bootstrap/dist/css/bootstrap.min.css" />
+        <script defer src="assets/vendor/fontawesome-free/js/all.js"></script>
+        <script defer src="assets/vendor/fontawesome-free/js/v4-shims.js"></script>
+        <link rel="stylesheet" href="assets/vendor/ionicons/css/ionicons.min.css" />
+        <link rel="stylesheet" href="assets/vendor/flickity/dist/flickity.min.css" />
+        <link rel="stylesheet" type="text/css" href="assets/vendor/photoswipe/dist/photoswipe.css" />
+        <link rel="stylesheet" type="text/css" href="assets/vendor/photoswipe/dist/default-skin/default-skin.css" />
+        <link rel="stylesheet" href="assets/vendor/bootstrap-slider/dist/css/bootstrap-slider.min.css" />
+        <link  rel="stylesheet" type="text/css" href="assets/vendor/summernote/dist/summernote-bs4.css" />
+        <link rel="stylesheet" href="assets/css/custom.css" />
+    </head>
+
+    <body>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+        <header class="nk-header nk-header-opaque">
+            <nav class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-autohide">
+                <div class="container">
+                    <div class="nk-nav-table">
+                        <a href="index.html" class="nk-nav-logo">
+                            <img src="assets/images/logo-01.svg" alt="GoodGames" width="199" />
+                        </a>
+                        <ul class="nk-nav nk-nav-right d-none d-lg-table-cell" data-nav-mobile="#nk-nav-mobile">
+                            <li>
+                                <a href="/"> Inicio </a>
+                            </li>
+                            <li>
+                                <a href="/blog.html"> Blog </a>
+                            </li>
+                            <li>
+                                <a href="/contactenos.html"> Cont&aacute;ctenos </a>
+                            </li>
+                            <li>
+                                <a href="#"> Acerca de Nosotros </a>
+                            </li>
+                            <li>
+                                <a href="#" data-toggle="modal" data-target="#modalSearch">
+                                    <span class="fa fa-search"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-toggle="modal" data-target="#modalLogin">
+                                    <span class="fa fa-user"></span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nk-nav nk-nav-right nk-nav-icons">
+                            <li class="single-icon d-lg-none">
+                                <a href="#" class="no-link-effect" data-nav-toggle="#nk-nav-mobile">
+                                    <span class="nk-icon-burger">
+                                        <span class="nk-t-1"></span>
+                                        <span class="nk-t-2"></span>
+                                        <span class="nk-t-3"></span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div id="nk-nav-mobile" class="nk-navbar nk-navbar-side nk-navbar-right-side nk-navbar-overlay-content d-lg-none">
+            <div class="nano">
+                <div class="nano-content">
+                    <a href="index.html" class="nk-nav-logo">
+                        <img src="assets/images/logo-01.svg" alt="" width="120" />
+                    </a>
+                    <div class="nk-navbar-mobile-content">
+                        <ul class="nk-nav"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nk-main">
+
+            <div class="nk-gap-2"></div>
+
+            <div class="container">
+                <div class="custom-article-container">
+                    <div class="row vertical-gap">
+                        <div class="col-lg-12">
+                            <div class="nk-blog-post nk-blog-post-single">
+                                <div class="nk-post-text mt-0">
+                                    <div class="nk-post-img">
+                                        <img src="assets/images/post-2.jpg" alt="Grab your sword and fight the Horde">
+                                    </div>
+                                    <div class="nk-gap-1"></div>
+                                    <div style="display: inline-flex;">
+                                        <h1 class="nk-post-title h3">Grab your sword and fight the Horde</h1>
+                                        <a href="javascript:void(0);" style="margin-left: 10px; font-size: 1.2rem;" data-bs-toggle="tooltip" data-bs-placement="top" title="Acceso directo a este art&iacute;culo" onclick="Copy();"><span class="fa fa-link"></span></a>
+                                        <a href="javascript:void(0);" style="margin-left: 10px; font-size: 1.2rem;" data-bs-toggle="tooltip" data-bs-placement="top" title="Marca que te gusta este art&iacute;culo" onclick="Copy();"><span class="fa fa-thumbs-up"></span></a>
+                                    </div>
+                                    <h1 class="nk-post-title h5">Esto es un subtitulo</h1>
+                                    <div class="nk-post-by">
+                                        <img src="assets/images/avatar-gordo.jpg" alt="Witch Murder" class="rounded-circle" width="35"> por <a href="#">Esteban "El Carry" Orozco</a> el 30 de febrero de 2022
+                                        <div class="nk-post-categories">
+                                        <span class="custom-tag">Acci&oacute;n</span>
+                                        <span class="custom-tag">Aventura</span>
+                                        <span class="custom-tag">MMO</span>
+                                        <span class="custom-tag">FPS</span>
+                                        <span class="custom-tag">RPG</span>
+                                        <span class="custom-tag">Racing</span>
+                                        <span class="custom-tag">Fantas&iacute;a</span>
+                                            <!-- <span class="custom-tag-before"></span><span class="custom-tag">Acci&oacute;n</span>
+                                            <span class="custom-tag-before"></span><span class="custom-tag">Aventura</span> -->
+                                        </div>
+                                    </div>
+                                    <div class="nk-gap"></div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet sem eu lorem dictum posuere a sed nisl. Sed in lacinia diam. Aliquam faucibus mollis turpis, et auctor felis tempus et. Nam eleifend, augue vitae efficitur finibus, purus sapien vestibulum nisl, a volutpat felis nibh sed dui. Mauris efficitur condimentum justo, eget semper enim lobortis nec. Sed vehicula id tortor ac pretium. Nam tempor semper eros, vel malesuada orci ultricies vitae. In finibus tempor tempus. Sed vel mauris quis nunc maximus vestibulum. Vestibulum feugiat, dolor ac rutrum porttitor, nibh dui auctor tellus, eget egestas turpis libero ut metus. In sagittis neque vel dui laoreet convallis. Suspendisse suscipit quis purus ac eleifend. Vivamus a ante neque. Pellentesque urna urna, venenatis sollicitudin molestie aliquet, efficitur accumsan nibh. Quisque quis sodales eros, eget iaculis turpis. Mauris eu congue magna, sed mattis est.</p>
+
+                                    <p>Nam pretium tincidunt magna vel rhoncus. Aenean sagittis ligula orci, eu condimentum eros imperdiet non. Nullam cursus massa a elit volutpat, non aliquet arcu ornare. Nulla at lectus eget diam sollicitudin pharetra. Suspendisse nec nibh non lorem cursus ultrices. Nullam sit amet dui neque. Pellentesque rhoncus eget ipsum quis porttitor. Aliquam vulputate lacinia turpis, a condimentum dui dignissim eu. Fusce ut velit non urna volutpat egestas. Integer ac massa tempus, condimentum magna ut, interdum enim. Nulla ut euismod nisl, vel blandit nulla. Maecenas ut ligula cursus, vestibulum urna in, mollis justo. Etiam consectetur vel diam at gravida. Aliquam ut feugiat lorem, eget egestas lectus.</p>
+                                
+                                    <p>Sed tempus ullamcorper tempus. Curabitur ornare accumsan pulvinar. Sed sodales tortor id elit dapibus mollis. Phasellus pulvinar eu urna in vehicula. Aliquam sodales lorem lacus, ac consequat enim dictum in. Sed vestibulum ullamcorper volutpat. Donec a odio nec massa semper semper id in magna. In porta erat ac sem ullamcorper imperdiet. In consectetur felis imperdiet, fermentum diam a, consequat erat. Maecenas interdum risus euismod lacus elementum tincidunt. Praesent sollicitudin nisl arcu, elementum faucibus tortor fermentum at. Phasellus non enim blandit, aliquet erat ac, ornare ligula.</p>
+                            
+                                    <p>Maecenas turpis tellus, malesuada ut leo sed, finibus consequat mi. Curabitur suscipit ligula ut porta elementum. Nunc id sem eget lorem porta rhoncus a ut magna. Suspendisse faucibus risus vel enim pretium sollicitudin. Suspendisse nulla mi, hendrerit vel pharetra sit amet, aliquam vitae turpis. Fusce lacus risus, tempus vitae risus non, malesuada scelerisque quam. Etiam sed dapibus ex. Suspendisse at mi eget eros egestas tristique. Proin vehicula quis orci quis lobortis. Proin magna nulla, consequat non ex sed, mollis elementum odio. Cras sem justo, sagittis ut vulputate sit amet, blandit eget sapien. Pellentesque finibus feugiat dolor, in semper sem. Mauris posuere tellus sed rutrum gravida. Aliquam pellentesque ex sit amet quam sollicitudin euismod. Nam sit amet nisl enim. Duis tristique mi id ipsum suscipit, quis posuere massa dictum.</p>
+                        
+                                    <p>Vivamus pharetra ullamcorper risus. Suspendisse est neque, porta non porta nec, dignissim eu odio. In hac habitasse platea dictumst. Donec bibendum enim tellus, id aliquam lectus imperdiet quis. Nullam in volutpat purus. Ut bibendum orci ut dictum congue. Donec facilisis laoreet augue, ut tempus massa cursus vel. Suspendisse id volutpat ex. Fusce malesuada neque eget rutrum elementum. Nullam varius porttitor feugiat. Nullam vehicula feugiat lorem, id semper felis tincidunt vel. Curabitur fringilla accumsan volutpat. Vestibulum quis justo aliquet, sodales mauris in, sodales mauris.</p>
+
+                                    <div class="nk-gap"></div>
+                                    <div class="nk-post-share">
+                                        <span class="h5">Compartir este art&iacute;culo:</span>
+                                        <ul class="nk-social-links-2">
+                                            <li><span class="social-copy-link"><a href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top" title="Acceso directo a este art&iacute;culo" onclick="Copy();" style="color: #000000 !important;"><span class="fa fa-link"></span></a></span></li>
+                                            <li><span class="nk-social-facebook" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartir en Facebook"><span class="fab fa-facebook"></span></span></li>
+                                            <li><span class="nk-social-twitter" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartir en Twitter"><span class="fab fa-twitter"></span></span></li>
+                                            <li><span class="nk-social-pinterest" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartir en Pinterest"><span class="fab fa-pinterest-p"></span></span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="nk-gap-2"></div>
+                            <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Art&iacute;culos</span> Relacionados</span></h3>
+                            <div class="nk-gap"></div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="nk-blog-post">
+                                        <a href="blog-article.html" class="nk-post-img">
+                                            <img src="assets/images/post-3-mid.jpg" alt="We found a witch! May we burn her?">
+                                            <span class="nk-post-comments-count">7</span>
+                                            <span class="nk-post-categories">
+                                                <span class="custom-tag-article-image">Aventura</span>
+                                            </span>
+                                        </a>
+                                        <div class="nk-gap"></div>
+                                        <h2 class="nk-post-title h4"><a href="blog-article.html">We found a witch! May we burn her?</a></h2>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="nk-blog-post">
+                                        <a href="blog-article.html" class="nk-post-img">
+                                            <img src="assets/images/post-4-mid.jpg" alt="For good, too though, in consequence">
+                                            <span class="nk-post-comments-count">23</span>
+                                            <span class="nk-post-categories">
+                                                <span class="custom-tag-article-image">Estrategia</span>
+                                            </span>
+                                        </a>
+                                        <div class="nk-gap"></div>
+                                        <h2 class="nk-post-title h4"><a href="blog-article.html">For good, too though, in consequence</a></h2>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div id="comments"></div>
+                            <h3 class="nk-decorated-h-2"><span><span class="text-main-1">3</span> Comentarios</span></h3>
+                            <div class="nk-gap"></div>
+                            <div class="nk-comments">
+                                <div class="nk-comment">
+                                    <div class="nk-comment-meta">
+                                        <img src="assets/images/avatar-2.jpg" alt="Witch Murder" class="rounded-circle" width="35"><a href="#">Esteban "El Carry" Orozco</a> el 30 de febrero de 2022 <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 float-right">Responder</a>
+                                    </div>
+                                    <div class="nk-comment-text">
+                                        <p>This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her in a moment, and found herself walking in at the front-door again.</p>
+                                    </div>
+                                    <div class="nk-comment">
+                                        <div class="nk-comment-meta">
+                                            <img src="assets/images/avatar-1.jpg" alt="Hitman" class="rounded-circle" width="35"><a href="#">Esteban "El Carry" Orozco</a> el 30 de febrero de 2022 <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 float-right">Responder</a>
+                                        </div>
+                                        <div class="nk-comment-text">
+                                            <p>To her surprise, she lost sight of her in a moment, and found herself walking in at the front-door again.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="nk-comment">
+                                    <div class="nk-comment-meta">
+                                        <img src="assets/images/avatar-3.jpg" alt="Wolfenstein" class="rounded-circle" width="35"><a href="#">Esteban "El Carry" Orozco</a> el 30 de febrero de 2022 <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 float-right">Responder</a>
+                                    </div>
+                                    <div class="nk-comment-text">
+                                        <p>The sight of the tumblers restored Bob Sawyer to a degree of equanimity which he had not possessed since his interview with his landlady. His face brightened up, and he began to feel quite convivial.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="nk-gap-2"></div>
+                            <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Escribir</span> un comentario</span></h3>
+                            <div class="nk-gap"></div>
+                            <div class="nk-reply">
+                                <form action="#" class="nk-form" novalidate="novalidate">
+                                    <div class="row sm-gap vertical-gap">
+                                        <div class="col-md-4">
+                                            <input type="email" class="form-control required" name="email" placeholder="E-mail *">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control required" name="name" placeholder="Nombre *">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" name="name" placeholder="Sitio Web">
+                                        </div>
+                                    </div>
+                                    <div class="nk-gap-1"></div>
+                                    <textarea class="form-control required" name="message" rows="5" placeholder="Mensaje *" aria-required="true"></textarea>
+                                    <div class="nk-gap-1"></div>
+                                    <div class="nk-form-response-success"></div>
+                                    <div class="nk-form-response-error"></div>
+                                    <button class="nk-btn nk-btn-rounded nk-btn-color-main-1">Enviar comentario</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nk-gap-2"></div>
+
+            <footer class="nk-footer">
+                <div class="nk-copyright">
+                    <div class="container">
+                        <div class="nk-copyright-left">
+                            Copyright &copy; 2022
+                            <a href="#" target="_blank">GAMERBLOG</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- <img class="nk-page-background-top" src="assets/images/bg-4.jpg" alt="" /> -->
+        <!-- <img class="nk-page-background-bottom" src="assets/images/bg-bottom-1.jpg" alt="" /> -->
+
+        <div class="nk-modal modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span class="fa fa-times"></span>
+                        </button>
+                        <h4 class="mb-0">Buscar</h4>
+                        <div class="nk-gap-1"></div>
+                        <form action="#" class="nk-form nk-form-style-1">
+                            <input type="text" value="" name="search" class="form-control" placeholder="Ingrese su b&uacute;squeda y presione Enter" autofocus />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nk-modal modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span class="fa fa-times"></span>
+                        </button>
+                        <h4 class="mb-0">
+                            <span class="text-main-1">Log</span>In
+                        </h4>
+                        <div class="nk-gap-1"></div>
+                        <form action="#" class="nk-form text-white">
+                            <div class="row vertical-gap">
+                                <div class="col-md-6">
+                                    Con e-mail y contrase&ntilde;a:
+                                    <div class="nk-gap"></div>
+                                    <input type="email" value="" name="email" class="form-control" placeholder="E-mail" />
+                                    <div class="nk-gap"></div>
+                                    <input type="password" value="" name="password" class="required form-control" placeholder="Contrase&ntilde;a" />
+                                </div>
+                                <div class="col-md-6">
+                                    O sus redes sociales:
+                                    <div class="nk-gap"></div>
+                                    <ul class="nk-social-links-2">
+                                        <li>
+                                            <a class="nk-social-facebook" href="#" ><span class="fab fa-facebook"></span></a>
+                                        </li>
+                                        <li>
+                                            <a class="nk-social-google-plus" href="#" ><span class="fab fa-google-plus" ></span></a>
+                                        </li>
+                                        <li>
+                                            <a class="nk-social-twitter" href="#" ><span class="fab fa-twitter"></span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="nk-gap-1"></div>
+                            <div class="row vertical-gap">
+                                <div class="col-md-6">
+                                    <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-block" >Ingresar</a>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mnt-5">
+                                        <small><a href="#">Olvid&oacute; su contrase&ntilde;a?</a></small>
+                                    </div>
+                                    <div class="mnt-5">
+                                        <small><a href="#">No ten&eacute;s cuenta? Registrate!!!!</a></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+        <script src="assets/vendor/object-fit-images/dist/ofi.min.js"></script>
+        <script src="assets/vendor/gsap/src/minified/TweenMax.min.js"></script>
+        <script src="assets/vendor/gsap/src/minified/plugins/ScrollToPlugin.min.js"></script>
+        <script src="assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+        <script src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="assets/vendor/sticky-kit/dist/sticky-kit.min.js"></script>
+        <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
+        <script src="assets/vendor/jarallax/dist/jarallax-video.min.js"></script>
+        <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/vendor/flickity/dist/flickity.pkgd.min.js"></script>
+        <script src="assets/vendor/photoswipe/dist/photoswipe.min.js"></script>
+        <script src="assets/vendor/photoswipe/dist/photoswipe-ui-default.min.js"></script>
+        <script src="assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="assets/vendor/jquery-countdown/dist/jquery.countdown.min.js"></script>
+        <script src="assets/vendor/moment/min/moment.min.js"></script>
+        <script src="assets/vendor/moment-timezone/builds/moment-timezone-with-data.min.js"></script>
+        <script src="assets/vendor/hammerjs/hammer.min.js"></script>
+        <script src="assets/vendor/nanoscroller/bin/javascripts/jquery.nanoscroller.js"></script>
+        <script src="assets/vendor/soundmanager2/script/soundmanager2-nodebug-jsmin.js"></script>
+        <script src="assets/vendor/bootstrap-slider/dist/bootstrap-slider.min.js"></script>
+        <script src="assets/vendor/summernote/dist/summernote-bs4.min.js"></script>
+        <script src="assets/plugins/nk-share/nk-share.js"></script>
+        <script src="assets/js/goodgames.min.js"></script>
+        <script src="assets/js/goodgames-init.js"></script>
+        <script src="assets/js/custom.js"></script>
+    </body>
+</html>

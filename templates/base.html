@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>{% block title %} {% endblock %}</title>
+        <meta name="description" content="Proyecto final del curso de Python de Coderhouse, comision 31075, de Aracena Cesar, Orozco Jose y Orozco Esteban" />
+        <meta name="keywords" content="gaming, games, blog, python, django" />
+        <meta name="author" content="Aracena Cesar, Orozco Jose y Orozco Esteban" />
+        <!-- <link rel="icon" type="image/png" href="{% static 'assets/images/favicon.png' %}" /> -->
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/favicon/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/favicon/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicon/favicon-16x16.png' %}">
+        <link rel="manifest" href="{% static 'assets/images/favicon/site.webmanifest' %}">
+        <link rel="mask-icon" href="{% static 'assets/images/favicon/safari-pinned-tab.svg' %}" color="#5bbad5">
+        <link rel="shortcut icon" href="{% static 'assets/images/favicon/favicon.ico' %}">
+        <meta name="msapplication-TileColor" content="#2b5797">
+        <meta name="msapplication-config" content="{% static 'assets/images/favicon/browserconfig.xml' %}">
+        <meta name="theme-color" content="#ffffff">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7cOpen+Sans:400,700" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap/dist/css/bootstrap.min.css' %}" />
+        <script defer src="{% static 'assets/vendor/fontawesome-free/js/all.js' %}"></script>
+        <script defer src="{% static 'assets/vendor/fontawesome-free/js/v4-shims.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'assets/vendor/ionicons/css/ionicons.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'assets/vendor/flickity/dist/flickity.min.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/photoswipe/dist/photoswipe.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/photoswipe/dist/default-skin/default-skin.css' %}" />
+        <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap-slider/dist/css/bootstrap-slider.min.css' %}" />
+        <link  rel="stylesheet" type="text/css" href="{% static 'assets/vendor/summernote/dist/summernote-bs4.css' %}" />
+        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+        <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}" />
+    </head>
+
+    <body>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+        
+        <div id="wrap">
+        <div id="main" class="container-flex clear-top">
+
+        <header class="nk-header nk-header-opaque">
+            <nav class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-autohide">
+                <div class="container">
+                    <div class="nk-nav-table">
+                        <a href="/" class="nk-nav-logo">
+                            <img src="{% static 'assets/images/logo-01.svg' %}" alt="GoodGames" width="199" />
+                        </a>
+                        <ul class="nk-nav nk-nav-right d-none d-lg-table-cell" data-nav-mobile="#nk-nav-mobile">
+                            <li>
+                                <a href="/"> Inicio </a>
+                            </li>
+                            <li>
+                                <a href="/blog.html"> Blog </a>
+                            </li>
+                            <li>
+                                <a href="/contactenos.html"> Cont&aacute;ctenos </a>
+                            </li>
+                            <li>
+                                <a href="#"> Acerca de Nosotros </a>
+                            </li>
+                            <li>
+                                <a href="#" data-toggle="modal" data-target="#modalSearch">
+                                    <span class="fa fa-search"></span>
+                                </a>
+                            </li>
+                            {% if request.user.is_authenticated %}
+                            <li class=" nk-drop-item">
+                                <a href="#">
+                                    <img src="{{ request.user.profile_image.url }}" width="38" height="38" class="rounded-circle">
+                                </a>
+                                <ul class="dropdown">
+                                    <li>
+                                        <p class="custom-menu-no-link">{{request.user.username}}</p>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'profile' %}"> Mi Perfil </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> Publicar Articulo </a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'logout' %}"> Logout </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            {% else %}
+                            <li>
+                                <a href="#" data-toggle="modal" data-target="#modalLogin">
+                                    <span class="fa fa-user"></span>
+                                </a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                        <ul class="nk-nav nk-nav-right nk-nav-icons">
+                            <li class="single-icon d-lg-none">
+                                <a href="#" class="no-link-effect" data-nav-toggle="#nk-nav-mobile">
+                                    <span class="nk-icon-burger">
+                                        <span class="nk-t-1"></span>
+                                        <span class="nk-t-2"></span>
+                                        <span class="nk-t-3"></span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div id="nk-nav-mobile" class="nk-navbar nk-navbar-side nk-navbar-right-side nk-navbar-overlay-content d-lg-none">
+            <div class="nano">
+                <div class="nano-content">
+                    <a href="index.html" class="nk-nav-logo">
+                        <img src="{% static 'assets/images/logo.svg' %}" alt="" width="120">
+                    </a>
+                    <div class="nk-navbar-mobile-content">
+                        <ul class="nk-nav">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nk-main">
+            <div class="nk-gap-2"></div>
+
+            {% block content %}
+
+            {% endblock %}
+
+            <div class="nk-gap-2"></div>
+
+        </div>
+        </div>
+        </div>
+
+
+        <footer class="nk-footer footer">
+            <div class="nk-copyright">
+                <div class="container">
+                    <div class="nk-copyright-left">
+                        Copyright &copy; 2022
+                        <a href="#" target="_blank">GAMERBLOG</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- <img class="nk-page-background-top" src="{% static 'assets/images/bg-4.jpg' %}" alt="" /> -->
+        <!-- <img class="nk-page-background-bottom" src="{% static 'assets/images/bg-bottom-1.jpg' %}" alt="" /> -->
+
+        <div class="nk-modal modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span class="fa fa-times"></span>
+                        </button>
+                        <h4 class="mb-0">Buscar</h4>
+                        <div class="nk-gap-1"></div>
+                        <form action="#" class="nk-form nk-form-style-1">
+                            <input type="text" value="" name="search" class="form-control" placeholder="Ingrese su b&uacute;squeda y presione Enter" autofocus />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nk-modal modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span class="fa fa-times"></span>
+                        </button>
+                        <h4 class="mb-0">
+                            <span class="text-main-1">Log</span>In
+                        </h4>
+                        <div class="nk-gap-1"></div>
+                        <form action="{% url 'login' %}" class="nk-form text-white" method="post">
+                            {% csrf_token%}
+                            <div class="row vertical-gap">
+                                <div class="col-md-12">
+                                    Con su direcci&oacute;n de e-mail y contrase&ntilde;a:
+                                    <div class="nk-gap"></div>
+                                    <input type="email" value="" name="email" class="form-control" placeholder="E-mail" />
+                                    <div class="nk-gap"></div>
+                                    <input type="password" value="" name="password" class="required form-control" placeholder="Contrase&ntilde;a" />
+                                </div>
+                            </div>
+                            <div class="nk-gap-1"></div>
+                            <div class="row vertical-gap">
+                                <div class="col-md-12">
+                                    <div class="mnt-5 mb-5">
+                                        <small><a href="{% url 'register' %}">No ten&eacute;s cuenta? Registrate!!!!</a></small>
+                                    </div>
+                                    <button type="submit" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-block">Ingresar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="{% static 'assets/vendor/jquery/dist/jquery.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/object-fit-images/dist/ofi.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/gsap/src/minified/TweenMax.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/gsap/src/minified/plugins/ScrollToPlugin.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/popper.js/dist/umd/popper.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/sticky-kit/dist/sticky-kit.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/jarallax/dist/jarallax.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/jarallax/dist/jarallax-video.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/flickity/dist/flickity.pkgd.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/photoswipe/dist/photoswipe.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/photoswipe/dist/photoswipe-ui-default.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/jquery-validation/dist/jquery.validate.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/jquery-countdown/dist/jquery.countdown.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/moment/min/moment.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/moment-timezone/builds/moment-timezone-with-data.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/hammerjs/hammer.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/nanoscroller/bin/javascripts/jquery.nanoscroller.js' %}"></script>
+        <script src="{% static 'assets/vendor/soundmanager2/script/soundmanager2-nodebug-jsmin.js' %}"></script>
+        <script src="{% static 'assets/vendor/bootstrap-slider/dist/bootstrap-slider.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/summernote/dist/summernote-bs4.min.js' %}"></script>
+        <script src="{% static 'assets/plugins/nk-share/nk-share.js' %}"></script>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+        <script src="{% static 'assets/js/custom.js' %}"></script>
+    </body>
+</html>

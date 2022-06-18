@@ -1,0 +1,251 @@
+{% extends 'base.html' %}
+{% block title %} Gamer Blog {% endblock %}
+
+{% block content %}
+{% load static %}
+<div class="container">
+
+    <div class="nk-gap-2"></div>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="">
+                <div class="swiper-slide nk-image-slider-item">
+                    <img src="{% static 'assets/images/slider-01.jpg' %}" class="nk-image-slider-img" alt="">
+                    <div class="nk-image-slider-content">
+                        <h3 class="h4">As we Passed, I remarked</h3>
+                        <p class="text-white">As we passed, I remarked a beautiful church-spire rising above some old elms in the park; and before them, in the midst of a lawn, chimneys covered with ivy, and the windows shining in the sun.</p>
+                        <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-hover-color-main-1">Leer +</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+    
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    
+        <div class="swiper-scrollbar"></div>
+    </div>
+
+    <div class="nk-gap-2"></div>
+    <div class="row vertical-gap">
+        <div class="col-lg-4">
+            <a href="#" class="custom-card-button-link">
+                <div class="nk-feature-1 zoom">
+                    <div class="nk-feature-icon">
+                        <img src="{% static 'assets/images/icon-mouse.svg' %}" alt="">
+                    </div>
+                    <div class="nk-feature-cont">
+                        <h3 class="nk-feature-title">PC</h3>
+                        <h4 class="nk-feature-title text-main-1">Ver Juegos</h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-4">
+            <a href="#" class="custom-card-button-link">
+                <div class="nk-feature-1 zoom">
+                    <div class="nk-feature-icon">
+                        <img src="{% static 'assets/images/icon-gamepad.svg' %}" alt="">
+                    </div>
+                    <div class="nk-feature-cont">
+                        <h3 class="nk-feature-title">PS</h3>
+                        <h4 class="nk-feature-title text-main-1">Ver Juegos</h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-4">
+            <a href="#" class="custom-card-button-link">
+                <div class="nk-feature-1 zoom">
+                    <div class="nk-feature-icon">
+                        <img src="{% static 'assets/images/icon-gamepad-2.svg' %}" alt="">
+                    </div>
+                    <div class="nk-feature-cont">
+                        <h3 class="nk-feature-title">Xbox</h3>
+                        <h4 class="nk-feature-title text-main-1">Ver Juegos</h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="nk-gap-2"></div>
+    <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Ultimas</span> Noticias</span></h3>
+    <div class="nk-gap"></div>
+    <div class="nk-blog-grid">
+        <div class="row">
+            <div class="col-md-6 col-lg-3">
+                <div class="nk-blog-post">
+                    <a href="blog-article.html" class="nk-post-img">
+                        <img src="{% static 'assets/images/post-5-mid.jpg' %}" alt="He made his passenger captain of one">
+                        <span class="nk-post-comments-count">13</span>
+                        <span class="nk-post-categories">
+                            <span class="bg-main-5">Indie</span>
+                        </span>
+                    </a>
+                    <div class="custom-index-card-container">
+                        <div class="nk-gap"></div>
+                        <h2 class="nk-post-title h4"><a href="blog-article.html">He made his passenger captain of one</a></h2>
+                        <div class="nk-post-text">
+                            <p>Just then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door...</p>
+                        </div>
+                        <div class="nk-gap"></div>
+                        <a href="blog-article.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Leer +</a>
+                        <div class="nk-post-date float-right"><span class="fa fa-calendar"></span> Jul 23, 2018</div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="nk-blog-post">
+                    <a href="blog-article.html" class="nk-post-img">
+                        <img src="{% static 'assets/images/post-6-mid.jpg' %}" alt="At first, for some time, I was not able to answer">
+                        <span class="nk-post-comments-count">0</span>
+                        <span class="nk-post-categories">
+                            <span class="bg-main-5">Racing</span>
+                        </span>
+                    </a>
+                    <div class="custom-index-card-container">
+                        <div class="nk-gap"></div>
+                        <h2 class="nk-post-title h4"><a href="blog-article.html">At first, for some time, I was not able to answer</a></h2>
+                        <div class="nk-post-text">
+                            <p>This little wandering journey, without settled place of abode, had been so unpleasant to me, that my own house, as I called it to myself, was a perfect settlement to me compared to that...</p>
+                        </div>
+                        <div class="nk-gap"></div>
+                            <a href="blog-article.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Leer +</a>
+                        <div class="nk-post-date float-right"><span class="fa fa-calendar"></span> Jul 3, 2018</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="nk-blog-post">
+                    <a href="blog-article.html" class="nk-post-img">
+                        <img src="{% static 'assets/images/post-6-mid.jpg' %}" alt="At first, for some time, I was not able to answer">
+                        <span class="nk-post-comments-count">0</span>
+                        <span class="nk-post-categories">
+                            <span class="bg-main-5">Racing</span>
+                        </span>
+                    </a>
+                    <div class="custom-index-card-container">
+                        <div class="nk-gap"></div>
+                        <h2 class="nk-post-title h4"><a href="blog-article.html">At first, for some time, I was not able to answer</a></h2>
+                        <div class="nk-post-text">
+                            <p>This little wandering journey, without settled place of abode, had been so unpleasant to me, that my own house, as I called it to myself, was a perfect settlement to me compared to that...</p>
+                        </div>
+                        <div class="nk-gap"></div>
+                            <a href="blog-article.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Leer +</a>
+                        <div class="nk-post-date float-right"><span class="fa fa-calendar"></span> Jul 3, 2018</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="nk-blog-post">
+                    <a href="blog-article.html" class="nk-post-img">
+                        <img src="{% static 'assets/images/post-6-mid.jpg' %}" alt="At first, for some time, I was not able to answer">
+                        <span class="nk-post-comments-count">0</span>
+                        <span class="nk-post-categories">
+                            <span class="bg-main-5">Racing</span>
+                        </span>
+                    </a>
+                    <div class="custom-index-card-container">
+                        <div class="nk-gap"></div>
+                        <h2 class="nk-post-title h4"><a href="blog-article.html">At first, for some time, I was not able to answer</a></h2>
+                        <div class="nk-post-text">
+                            <p>This little wandering journey, without settled place of abode, had been so unpleasant to me, that my own house, as I called it to myself, was a perfect settlement to me compared to that...</p>
+                        </div>
+                        <div class="nk-gap"></div>
+                            <a href="blog-article.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Leer +</a>
+                        <div class="nk-post-date float-right"><span class="fa fa-calendar"></span> Jul 3, 2018</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nk-gap-2"></div>
+    <div class="row vertical-gap">
+        <div class="col-lg-12">
+
+            <h3 class="nk-decorated-h-2">
+                <span><span class="text-main-1">Ultimos</span> Articulos</span>
+            </h3>
+        </div>
+    </div>
+    <div class="nk-gap"></div>
+    <div class="nk-blog-grid">
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="nk-blog-post">
+                    <a href="blog-article.html" class="nk-post-img">
+                        <img src="{% static 'assets/images/post-5-mid.jpg' %}" alt="He made his passenger captain of one">
+                        <span class="nk-post-comments-count">13</span>
+                    </a>
+                    <div class="custom-index-card-container">
+                        <div class="nk-gap"></div>
+                        <h2 class="nk-post-title h4"><a href="blog-article.html">He made his passenger captain of one</a></h2>
+                        <div class="nk-post-by">
+                            <img src="{% static 'assets/images/avatar-3.jpg' %}" alt="Wolfenstein" class="rounded-circle" width="35"> by <a href="https://nkdev.info">Wolfenstein</a> in Jul 23, 2018
+                        </div>
+                        <div class="nk-gap"></div>
+                        <div class="nk-post-text">
+                            <p>Just then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door...</p>
+                        </div>
+                        <div class="nk-gap"></div>
+                        <a href="blog-article.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Leer +</a>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="nk-blog-post">
+                    <a href="blog-article.html" class="nk-post-img">
+                        <img src="{% static 'assets/images/post-5-mid.jpg' %}" alt="He made his passenger captain of one">
+                        <span class="nk-post-comments-count">13</span>
+                    </a>
+                    <div class="custom-index-card-container">
+                        <div class="nk-gap"></div>
+                        <h2 class="nk-post-title h4"><a href="blog-article.html">He made his passenger captain of one</a></h2>
+                        <div class="nk-post-by">
+                            <img src="{% static 'assets/images/avatar-3.jpg' %}" alt="Wolfenstein" class="rounded-circle" width="35"> by <a href="https://nkdev.info">Wolfenstein</a> in Jul 23, 2018
+                        </div>
+                        <div class="nk-gap"></div>
+                        <div class="nk-post-text">
+                            <p>Just then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door...</p>
+                        </div>
+                        <div class="nk-gap"></div>
+                        <a href="blog-article.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Leer +</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="nk-blog-post">
+                    <a href="blog-article.html" class="nk-post-img">
+                        <img src="{% static 'assets/images/post-5-mid.jpg' %}" alt="He made his passenger captain of one">
+                        <span class="nk-post-comments-count">13</span>
+                    </a>
+                    <div class="custom-index-card-container">
+                        <div class="nk-gap"></div>
+                        <h2 class="nk-post-title h4"><a href="blog-article.html">He made his passenger captain of one</a></h2>
+                        <div class="nk-post-by">
+                            <img src="{% static 'assets/images/avatar-3.jpg' %}" alt="Wolfenstein" class="rounded-circle" width="35"> by <a href="https://nkdev.info">Wolfenstein</a> in Jul 23, 2018
+                        </div>
+                        <div class="nk-gap"></div>
+                        <div class="nk-post-text">
+                            <p>Just then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door...</p>
+                        </div>
+                        <div class="nk-gap"></div>
+                        <a href="blog-article.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Leer +</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %} Login {% endblock %}
+
+{% block content %}
+{% load static %}
+<div class="container custom-extra-height">
+
+    <div class="nk-gap-2"></div>
+    <div class="custom-index-card-container custom-extra-padding">
+        <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Inicie</span> Sesi&oacute;n</span></h3>
+        <div class="nk-gap"></div>
+        <form action="" class="nk-form" method="post">
+            {% csrf_token %}
+            <label for="email">E-mail</label>
+            <input type="email" name="email" class="form-control" maxlength="80"><br>
+            <label for="password">Contrase&ntilde;a</label>
+            <input type="password" name="password" class="form-control" maxlength="80"><br>
+            <!-- <div class="mnt-5">
+                <small><a href="#">Olvid&oacute; su contrase&ntilde;a?</a></small>
+            </div> -->
+            <div class="mnt-5">
+                <small><a href="{% url 'register' %}">No ten&eacute;s cuenta? Registrate!!!!</a></small>
+            </div>
+            <div class="nk-gap"></div>
+            <button type="submit" class="nk-btn nk-btn-rounded nk-btn-color-main-1">Ingresar</button>
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}
