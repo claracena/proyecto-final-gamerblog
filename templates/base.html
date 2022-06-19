@@ -33,8 +33,9 @@
         <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
         <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}" />
     </head>
-
-    <body>
+    {% with 'assets/images/bgs/'|add:bg as image_path %}
+    <body style="background-image: url({% static image_path %});">
+    {% endwith %}
         <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
         
         <div id="wrap">

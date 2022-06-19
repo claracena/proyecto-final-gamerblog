@@ -3,7 +3,7 @@ body {
     overflow-x: hidden;
     color: #a0a7ab;
     background-color: #181c23;
-    background-image: url(../images/bg-02b.jpg);
+    /* background-image: url(../images/bg-02b.jpg); */
     /* background-color: rgba(0, 0, 0, 0.9); */
     background-attachment: fixed;
     background-repeat: no-repeat;
