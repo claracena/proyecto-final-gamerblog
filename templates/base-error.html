@@ -31,7 +31,7 @@
         <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}" />
     </head>
 
-    <body>
+        <body>
         <div class="nk-main">
             <div class="nk-fullscreen-block">
                 <div class="nk-fullscreen-block-top">
@@ -56,8 +56,10 @@
             </div>
         </div>
     </div>
-
-    <div class="nk-page-background-fixed" style="background-image: url({% static 'assets/images/bg-fixed-2.jpg' %});"></div>
+    {% with 'assets/images/bgs/'|add:bg as image_path %}
+    <div class="nk-page-background-fixed" style="background-image: url({% static image_path %});"></div>
+    {% endwith %}
+    <!-- <div class="nk-page-background-fixed" style="background-image: url({% static 'assets/images/bg-fixed-2.jpg' %});"></div> -->
 
     </body>
 </html>
