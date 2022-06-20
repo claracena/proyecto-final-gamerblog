@@ -47,7 +47,7 @@ class Account(AbstractBaseUser):
     fname = models.CharField(verbose_name='first name', max_length=30, null=True)
     lname = models.CharField(verbose_name='last name', max_length=30, null=True)
     bio = models.TextField(verbose_name='biography', null=True)
-    profile_image = models.ImageField(max_length=255, upload_to=get_profile_image_filepath, null=True, blank=True, default=get_default_profile_image)
+    profile_image = models.ImageField(max_length=255, null=True, blank=True, default='avatar.jpg')
     hide_email = models.BooleanField(default=True)
 
     objects = MyAccountManager()

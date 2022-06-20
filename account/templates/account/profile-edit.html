@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %} Editar Mi Perfil {% endblock %}
+
+{% block content %}
+{% load static %}
+<div class="container custom-extra-height">
+
+    <div class="nk-gap-2"></div>
+    <div class="custom-index-card-container custom-extra-padding">
+        <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Editar</span> Perfil</span></h3>
+        <form action="" class="nk-form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="profile_image">Imagen de Perfil</label><br>
+            <input type="file" name="profile_image" accept="image/png, image/jpg, image/jpeg" /><br>
+            <label for="fname">Nombre</label>
+            <input type="text" name="fname" class="form-control" maxlength="80" value="{{ request.user.fname }}">
+            <label for="lname">Apellido</label>
+            <input type="text" name="lname" class="form-control" maxlength="80" value="{{ request.user.lname }}">
+            <label for="bio">Biograf&iacute;a</label>
+            <textarea name="bio" class="form-control" rows="10">{{ request.user.bio }}</textarea>
+            <!-- <small class="text-danger">Necesario. Sirve para iniciar sesi&oacute;n.</small> -->
+            <!-- <label for="password1">Nueva contrase&ntilde;a</label>
+            <input type="password" name="password1" class="form-control" maxlength="80">
+            <label for="password2">Repita su nueva contrase&ntilde;a</label>
+            <input type="password" name="password2" class="form-control" maxlength="80"> -->
+            <div class="nk-gap"></div>
+            <button type="submit" class="nk-btn nk-btn-rounded nk-btn-color-main-1">Guardar cambios</button>
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}

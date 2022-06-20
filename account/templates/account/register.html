@@ -20,6 +20,14 @@
             <input type="password" name="password1" class="form-control" maxlength="80">
             <label for="password2">Repita su Contrase&ntilde;a</label>
             <input type="password" name="password2" class="form-control" maxlength="80">
+            {% if messages %}
+            <br>
+            <div class="alert alert-danger" role="alert">
+                {% for message in messages %}
+                {{ message }}
+                {% endfor %}
+            </div><br>
+            {% endif %}
             <br><div class="mnt-5">
                 <small><a href="{% url 'login' %}">Ya est&aacute; registrado? Inicie Sesi&oacute;n</a></small>
             </div>

@@ -3,7 +3,7 @@ body {
     overflow-x: hidden;
     color: #a0a7ab;
     background-color: #181c23;
-    background-image: url(../images/bg-02b.jpg);
+    /* background-image: url(../images/bg-02b.jpg); */
     /* background-color: rgba(0, 0, 0, 0.9); */
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -2475,9 +2475,9 @@ img.rounded {
 .nk-navbar .nk-nav .dropdown > li > a:hover {
     text-decoration: none;
 }
-.nk-navbar .nk-nav .nk-drop-item > a::after {
+/* .nk-navbar .nk-nav .nk-drop-item > a::after {
     content: " +";
-}
+} */
 .nk-navbar .nk-nav .nk-drop-item.open > .dropdown,
 .nk-navbar .nk-nav .nk-drop-item:hover > .dropdown {
     visibility: inherit;
@@ -8145,4 +8145,30 @@ label {
     display: block;
     padding: 6px 17px;
     padding-right: 64px;
+}
+
+.custom-profile-label{
+    color: #f89920;
+    margin: 10px 0 5px 0;
+    padding-left: 10px;
+}
+
+.custom-profile-line {
+    border: 1px #f89920 solid;
+    border-radius: 5px;
+    background-color: rgb(27 24 14 / 30%);
+    color: white;
+    padding: 5px 10px;
+}
+
+.custom-profile-btn-edit {
+    position: relative;
+    margin-block: auto;
+    text-align-last: end;
+}
+
+.nk-btn-color-main-1.hover, .nk-btn-color-main-1:hover {
+    background-color: white !important;
+    border-color: white !important;
+    color: #000 !important;
 }
