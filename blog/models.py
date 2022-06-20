@@ -9,6 +9,7 @@ class Blog(models.Model):
     image = models.ImageField(blank=True, null=True)
     comments = models.IntegerField(default=0)
     category = models.CharField(max_length=255)
+    platform = models.CharField(max_length=255)
     # author = models.OneToOneField('account.Account', on_delete=models.CASCADE)
 
 
