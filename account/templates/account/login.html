@@ -12,9 +12,16 @@
         <form action="" class="nk-form" method="post">
             {% csrf_token %}
             <label for="email">E-mail</label>
-            <input type="email" name="email" class="form-control" maxlength="80"><br>
+            <input type="email" name="email" class="form-control" maxlength="80">
             <label for="password">Contrase&ntilde;a</label>
             <input type="password" name="password" class="form-control" maxlength="80"><br>
+            {% if messages %}
+            <div class="alert alert-danger" role="alert">
+                {% for message in messages %}
+                {{ message }}
+                {% endfor %}
+            </div><br>
+            {% endif %}
             <!-- <div class="mnt-5">
                 <small><a href="#">Olvid&oacute; su contrase&ntilde;a?</a></small>
             </div> -->

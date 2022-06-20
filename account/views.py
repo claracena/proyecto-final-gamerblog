@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from account.forms import *
 from account.models import *
 
@@ -24,6 +25,7 @@ def registerView(request, *args, **kwargs):
                 return redirect(destination)
             return redirect('home')
         else:
+            messages.error(request, 'Complete correctamente los datos')
             context['registration_form'] = form
 
     return render(request, 'account/register.html', context)
@@ -49,6 +51,7 @@ def loginView(request, *args, **kwargs):
                 return redirect(destination)
             return redirect('home')
         else:
+            messages.error(request, 'Usuario o contraseña incorrectos')
             return render(request, 'account/login.html', context)
 
     return render(request, 'account/login.html', context)
