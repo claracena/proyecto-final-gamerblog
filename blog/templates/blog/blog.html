@@ -1,22 +1,83 @@
 {% extends 'base.html' %}
+{% block title %} Blog {% endblock %}
 
 {% block content %}
+{% load static %}
 
-<!-- 
-
-    {{ post.title }}
-    {{ post.body }} -->
-    
-    <div class="container">
-        <div class="row">
-            {% for post in post %}
-            <div class="col-md-12">
-                <h1>{{ post.title }}</h1>
-                <p>{{ post.body }}</p>
+<div class="container custom-extra-height">
+    <div class="nk-blog-fullwidth">
+        <!-- post -->
+        
+        <!-- <div class="container">
+            <div class="row">
+                {% for post in post %}
+                <div class="col-md-12">
+                    <h1>{{ post.title }}</h1>
+                    <p>{{ post.body }}</p>
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
+    </div> -->
+
+    {% for post in post %}
+
+    <div class="nk-blog-post">
+        <a href="articulo.html" class="nk-post-img">
+            <img src="{% static 'assets/images/post-1-fw.jpg' %}" alt={{ post.title}} style="margin-bottom: -1px;" />
+            <span class="nk-post-comments-count">{{ post.comments }}</span>
+        </a>
+        <div class="custom-index-card-container">
+            <div class="nk-gap-2"></div>
+            <div class="row vertical-gap">
+                <div class="col-md-7 col-lg-8">
+                    <h2 class="nk-post-title h4">
+                        <a href="articulo.html">{{ post.title}}</a>
+                    </h2>
+                    <div class="nk-gap"></div>
+                    <div class="nk-post-text">
+                        <p>{{ post.body}}
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4">
+                    <div class="nk-post-by">
+                        <img src="{% static 'assets/images/avatar-gordo.jpg' %}" alt="Hitman" class="rounded-circle" width="60" />
+                        por <a href="#">Esteban "El Carry" Orozco</a> <br />
+                        30 de febrero de 2022 <br><br>
+                    </div>
+                    <div class="nk-gap-3"></div>
+                    <div class="text-right">
+                        <a href="articulo.html" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1" style="line-height: 2 !important;">Seguir Leyendo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </div>
 
+    {% endfor %}
+
+
+
+
+    <!-- pie de pagina -->
+    <div class="nk-pagination nk-pagination-center">
+        <a href="#" class="nk-pagination-prev">
+            <span class="fa fa-arrow-left"></span>
+        </a>
+        <nav>
+            <a class="nk-pagination-current" href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <span>...</span>
+            <a href="#">14</a>
+        </nav>
+        <a href="#" class="nk-pagination-next">
+            <span class="fa fa-arrow-right"></span>
+        </a>
+    </div>
+</div>
 
 {% endblock %}
