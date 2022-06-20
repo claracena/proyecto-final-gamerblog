@@ -4,16 +4,17 @@ from .forms import PostForm
 
 # Create your views here.
 
+# lista de posts
 def blog(request):
     post = Blog.objects.all()
     context = {'post': post}
     return render(request, 'blog/blog.html', context=context)
 
+# formulario para crear posts
 def post_form(request):
     data = {
         'form' : PostForm(),
     }
-
     if request.method == 'POST':
         form = PostForm(data=request.POST)
         if form.is_valid():
