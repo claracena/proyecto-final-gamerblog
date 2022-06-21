@@ -15,7 +15,25 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="title">Título</label>
-                                <input type="text" class="form-control" name="title">
+                                <input type="text" class="form-control custom-profile-line" name="title">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="body">Texto</label>
+                                <textarea class="form-control custom-profile-line" name="body" rows="20"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="category">Categoria</label>
+                                <input type="text" class="form-control custom-profile-line" name="category">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="platform">Plataforma</label>
+                                <input type="text" class="form-control custom-profile-line" name="platform">
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -24,26 +42,8 @@
                                 <input type="file" name="image" accept="image/png, image/jpg, image/jpeg">
                             </div>
                         </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="body">Texto</label>
-                                <textarea class="form-control" name="body" rows="20"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="category">Categoria</label>
-                                <input type="text" class="form-control" name="category">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="platform">Plataforma</label>
-                                <input type="text" class="form-control" name="platform">
-                            </div>
-                        </div>
                         <div class="col">
-                        <input type='submit' class="btn btn-primary" value='Enviar'>
+                            <input type='submit' class="btn btn-primary" value='Enviar'>
                         </div>
                         {% if messages %}
                         <div class="alert alert-danger" role="alert">
