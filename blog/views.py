@@ -23,3 +23,8 @@ def post_form(request):
         else:
             return render(request, 'blog/post_form.html')
     return render(request, 'blog/post_form.html')
+
+def article(request,pk):
+    post = Blog.objects.get(id=pk)
+    context = {'post': post}
+    return render(request, 'blog/article.html', context=context)
