@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %} Nuevo articulo {% endblock %}
+
+{% block content %}
+
+<main>
+    <section id="contact" class="light-bg">
+        <div class="container inner-top-sm inner-bottom justify-content-center">
+            <div class="custom-article-container custom-extra-padding">
+            
+                <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Nuevo</span> articulo</span></h3>
+                <form action='' class="nk-form" method='POST' enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="hidden" name="author" value="{{ request.user.id }}">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="title">Título</label>
+                                <input type="text" class="form-control custom-profile-line" name="title">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="body">Texto</label>
+                                <textarea class="form-control custom-profile-line" name="body" rows="20"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="category">Categoria</label>
+                                <input type="text" class="form-control custom-profile-line" name="category">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="platform">Plataforma</label>
+                                <input type="text" class="form-control custom-profile-line" name="platform">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="image">Imagen</label>
+                                <input type="file" name="image" accept="image/png, image/jpg, image/jpeg">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <input type='submit' class="btn btn-primary" value='Enviar'>
+                        </div>
+                        {% if messages %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for message in messages %}
+                            {{ message }}
+                            {% endfor %}
+                        </div><br>
+                        {% endif %}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+
+{% endblock %}
