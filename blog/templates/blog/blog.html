@@ -13,7 +13,7 @@
 
     <div class="nk-blog-post">
         <a href="articulo.html" class="nk-post-img">
-            <img src="{% static 'assets/images/post-1-fw.jpg' %}" alt={{ post.title }} style="margin-bottom: -1px;" />
+            <img src="{% get_media_prefix %}{{ post.image }}" alt={{ post.title }} style="margin-bottom: -1px; width: -webkit-fill-available; height: 337px; object-fit: cover; object-position: 100% 50%;" />
             <span class="nk-post-comments-count">{{ post.comments }}</span>
         </a>
         <div class="custom-index-card-container">
@@ -25,13 +25,13 @@
                     </h2>
                     <div class="nk-gap"></div>
                     <div class="nk-post-text">
-                        <p>{{ post.body}}
+                        <p>{{ post.body|truncatechars:300}}
                         </p>
                     </div>
                 </div>
                 <div class="col-md-5 col-lg-4">
                     <div class="nk-post-by">
-                        <img src="{% static 'assets/images/avatar-gordo.jpg' %}" alt="Hitman" class="rounded-circle" width="60" />
+                        <img src="{{ post.author.profile_image.url }}" alt="Avatar" class="rounded-circle" width="60" />
                         por <a href="#">{{ post.author }}</a> <br />
                         {{ post.pub_date }} <br><br>
                     </div>
