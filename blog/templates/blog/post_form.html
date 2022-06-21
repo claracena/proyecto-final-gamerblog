@@ -9,7 +9,8 @@
             <div class="custom-article-container custom-extra-padding">
             
                 <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Nuevo</span> articulo</span></h3>
-                <form action='' class="nk-form" method='POST' enctype="multipart/form-data">{% csrf_token %}
+                <form action='' class="nk-form" method='POST' enctype="multipart/form-data">
+                    {% csrf_token %}
                     <input type="hidden" name="author" value="{{ request.user.id }}">
                     <div class="row">
                         <div class="col-md-12">

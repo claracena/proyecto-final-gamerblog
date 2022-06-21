@@ -8,7 +8,7 @@
     <div class="nk-blog-fullwidth">
         
     <!-- post -->
-        
+    
     {% for post in post %}
 
     <div class="nk-blog-post">
@@ -32,7 +32,7 @@
                 <div class="col-md-5 col-lg-4">
                     <div class="nk-post-by">
                         <img src="{{ post.author.profile_image.url }}" alt="Avatar" class="rounded-circle" width="60" />
-                        por <a href="#">{{ post.author }}</a> <br />
+                        por <a href="{% url 'user-profile' post.author.id %}">{{ post.author }}</a> <br />
                         {{ post.pub_date|date:'d/m/Y' }} <br><br>
                     </div>
                     <div class="nk-gap-3"></div>
