@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from .models import Blog
 from .forms import PostForm
 from django.contrib.auth.decorators import login_required
-from django.contrib import messages
 
 # Create your views here.
 
@@ -22,6 +21,5 @@ def post_form(request):
             formx.save()
             return redirect('blog')
         else:
-            messages.error(request, 'Bumbula')
             return render(request, 'blog/post_form.html')
     return render(request, 'blog/post_form.html')
