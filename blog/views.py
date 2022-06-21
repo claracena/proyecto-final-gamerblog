@@ -25,15 +25,3 @@ def post_form(request):
             messages.error(request, 'Bumbula')
             return render(request, 'blog/post_form.html')
     return render(request, 'blog/post_form.html')
-
-# @login_required(login_url='login')
-# def post_form(request):
-#     if request.method == 'POST':
-#         form = PostForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             messages.error(request, 'Bumbula')
-#             return render(request, 'blog/blog.html') 
-#         else:
-#             return render(request, 'blog/post_form.html')
-#     return render(request, 'blog/post_form.html')
