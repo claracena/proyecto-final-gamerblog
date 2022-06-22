@@ -8172,3 +8172,13 @@ label {
     border-color: white !important;
     color: #000 !important;
 }
+
+form > #id_tags,
+form > #id_platforms {
+    display: inline-flex !important;
+}
+
+form > #id_tags > div,
+form > #id_platforms > div {
+    margin-right: 10px !important;
+}
