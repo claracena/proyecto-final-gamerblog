@@ -21,7 +21,7 @@
             <div class="row vertical-gap">
                 <div class="col-md-7 col-lg-8">
                     <h2 class="nk-post-title h4">
-                        <a href="{% url 'article' post.pk %}">{{ post.title}}</a>
+                        <a href="{% url 'article' post.pk %}">{{ post.title|lower }}</a>
                     </h2>
                     <div class="nk-gap"></div>
                     <div class="nk-post-text">
