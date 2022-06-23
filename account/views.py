@@ -49,7 +49,7 @@ def loginView(request, *args, **kwargs):
             destination = get_redirect_if_exists(request)
             if destination:
                 return redirect(destination)
-            return redirect('home')
+            return redirect('blog')
         else:
             messages.error(request, 'Usuario o contraseña incorrectos')
             return render(request, 'account/login.html', context)
