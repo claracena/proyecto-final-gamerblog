@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.urls import reverse
+from ckeditor.fields import RichTextField
 
 class Tag(models.Model):
     tag_name = models.CharField(max_length=50)
@@ -17,7 +18,7 @@ class Platform(models.Model):
 class Blog(models.Model):
     title = models.CharField(max_length=255)
     pub_date = models.DateTimeField(auto_now_add=True)
-    body = models.TextField()
+    body = RichTextField()
     image = models.ImageField(blank=True, null=True, upload_to='post-images/')
     comments = models.IntegerField(default=0, null=True)
     tags = models.ManyToManyField(Tag)

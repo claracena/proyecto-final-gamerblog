@@ -11,6 +11,7 @@
                 <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Nuevo</span> articulo</span></h3>
                 <form action='' class="nk-form" method='POST' enctype="multipart/form-data">
                     {% csrf_token %}
+                    {{ form.media }}
                     {{ form.as_p }}
                         <div class="col">
                             <input type='submit' class="btn btn-primary" value='Enviar'>
