@@ -1,14 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="container custom-extra-height">
+    <div class="custom-article-container custom-extra-padding">
+        <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Contactanos</span></h3>
+            <form action='' method='POST'>
+                *Todos los campos obligatorios<br>
 
-<form action='' method='POST'>{% csrf_token %}
-    <h1>Contactanos</h1>
-    *Todos los campos obligatorios<br>
-    {{ form }}
-    <br><input type='submit' class="btn btn-primary" value='Enviar'>
-    <br>
-    También puede enviarnos un correo a: <a href="mailto:contacto@gamerblog.com">contacto@gamerblog.com</a>
-</form>
+                {% csrf_token %}
+                
+                
+                {{ form.as_p }}
+                
+                <br><input type='submit' class="btn btn-primary" value='Enviar'><br>
+
+                Contactanos por email a: <a href="mailto:contacto@gamerblog.com">contacto@gamerblog.com</a>
+            </form>
+    </div>
+</div>
+
 
 {% endblock %}
