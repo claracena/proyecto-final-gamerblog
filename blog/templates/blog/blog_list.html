@@ -53,20 +53,29 @@
 
     <!-- pie de pagina -->
     <div class="nk-pagination nk-pagination-center">
-        <a href="#" class="nk-pagination-prev">
-            <span class="fa fa-arrow-left"></span>
-        </a>
-        <nav>
+        {% if page_obj.paginator.num_pages > 1 %}
+        <!-- <a href="#" class="nk-pagination-prev"><span class="fa fa-arrow-left"></span></a> -->
+        {% if page_obj.has_previous %}
+        <a href="?page=1" class="nk-pagination-prev"><span class="fa fa-arrow-left"></span></a> <a href="?page={{ page_obj.previous_page_number }}">Anterior</a> &nbsp; |
+        {% endif %}
+        <!-- <nav>
             <a class="nk-pagination-current" href="#">1</a>
             <a href="#">2</a>
             <a href="#">3</a>
             <a href="#">4</a>
             <span>...</span>
             <a href="#">14</a>
-        </nav>
-        <a href="#" class="nk-pagination-next">
-            <span class="fa fa-arrow-right"></span>
-        </a>
+        </nav> -->
+        &nbsp;
+        <span class="nk-pagination-current">
+            Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+        </span>
+        &nbsp;
+        <!-- <a href="#" class="nk-pagination-next"><span class="fa fa-arrow-right"></span></a> -->
+        {% if page_obj.has_next %}
+            | &nbsp; <a href="?page={{ page_obj.next_page_number }}">Siguiente</a> <a href="?page={{ page_obj.paginator.num_pages }}" class="nk-pagination-next"><span class="fa fa-arrow-right"></span></a>
+        {% endif %}
+        {% endif %}
     </div>
 </div>
 

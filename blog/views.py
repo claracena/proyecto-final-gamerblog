@@ -10,6 +10,7 @@ from .models import Blog, Comment
 from .forms import ArticleForm, CommentForm
 
 class HomeView(ListView):
+    paginate_by = 3
     model = Blog
     template = 'blog/blog_list.html'
     ordering = ['-id']
