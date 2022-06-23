@@ -21,7 +21,7 @@
             <div class="row vertical-gap">
                 <div class="col-md-7 col-lg-8">
                     <h2 class="nk-post-title h4">
-                        <a href="{% url 'article' post.pk %}">{{ post.title|lower }}</a>
+                        <a href="{% url 'article' post.pk %}">{{ post.title }}</a>
                     </h2>
                     <div class="nk-gap"></div>
                     <div class="nk-post-text">
@@ -32,7 +32,7 @@
                 <div class="col-md-5 col-lg-4">
                     <div class="nk-post-by">
                         <img src="{{ post.author.profile_image.url }}" alt="Avatar" class="rounded-circle" width="60" />
-                        por <a href="{% url 'user-profile' post.author.id %}">{{ post.author }}</a> <br />
+                        por <a href="{% url 'user-profile' post.author.id %}">{% if post.author.fname == None %}{{ post.author.username }}{% else %}{{ post.author.fname }}{% endif %}</a> <br />
                         {{ post.pub_date|date:'d/m/Y' }} <br><br>
                     </div>
                     <div class="nk-gap-3"></div>
@@ -53,20 +53,29 @@
 
     <!-- pie de pagina -->
     <div class="nk-pagination nk-pagination-center">
-        <a href="#" class="nk-pagination-prev">
-            <span class="fa fa-arrow-left"></span>
-        </a>
-        <nav>
+        {% if page_obj.paginator.num_pages > 1 %}
+        <!-- <a href="#" class="nk-pagination-prev"><span class="fa fa-arrow-left"></span></a> -->
+        {% if page_obj.has_previous %}
+        <a href="?page=1" class="nk-pagination-prev"><span class="fa fa-arrow-left"></span></a> <a href="?page={{ page_obj.previous_page_number }}">Anterior</a> &nbsp; |
+        {% endif %}
+        <!-- <nav>
             <a class="nk-pagination-current" href="#">1</a>
             <a href="#">2</a>
             <a href="#">3</a>
             <a href="#">4</a>
             <span>...</span>
             <a href="#">14</a>
-        </nav>
-        <a href="#" class="nk-pagination-next">
-            <span class="fa fa-arrow-right"></span>
-        </a>
+        </nav> -->
+        &nbsp;
+        <span class="nk-pagination-current">
+            Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+        </span>
+        &nbsp;
+        <!-- <a href="#" class="nk-pagination-next"><span class="fa fa-arrow-right"></span></a> -->
+        {% if page_obj.has_next %}
+            | &nbsp; <a href="?page={{ page_obj.next_page_number }}">Siguiente</a> <a href="?page={{ page_obj.paginator.num_pages }}" class="nk-pagination-next"><span class="fa fa-arrow-right"></span></a>
+        {% endif %}
+        {% endif %}
     </div>
 </div>
 

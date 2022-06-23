@@ -7,6 +7,6 @@ urlpatterns = [
     path('logout/', logoutView, name='logout'),
     path('login/', loginView, name='login'),
     path('profile/', profileView, name='profile'),
-    path('user-profile/<str:pk>', userProfile, name='user-profile'),
+    path('user-profile/<int:pk>', userProfile, name='user-profile'),
     path('profile/edit', profileEdit, name='profile-edit'),
 ]

@@ -1,6 +1,6 @@
 from django import forms
-from .models import Tag, Platform, Blog
 from ckeditor.widgets import CKEditorWidget
+from .models import Tag, Platform, Blog, Comment
 
 class ArticleForm(forms.ModelForm):
 
@@ -14,25 +14,22 @@ class ArticleForm(forms.ModelForm):
         model = Blog
         fields = ('title', 'body', 'tags', 'platforms', 'image')
 
-        # widgets = {
-        #     'title': forms.TextInput(attrs={'class': 'form-control'}),
-        #     'body': forms.Textarea(attrs={'class': 'form-control'}),
-        #     'tags': forms.CheckboxSelectMultiple(attrs={'class': 'form-control'}),
-        #     'platforms': forms.CheckboxSelectMultiple(attrs={'class': 'form-control'}),
-        # }
+class CommentForm(forms.ModelForm):
 
-    # def __init__(self, *args, **kwargs):
-    #     super().__init__(*args, **kwargs)
-    #     self.fields['image'].label = 'Imagen de portada'
-    #     self.fields['title'].label = 'Titulo'
-    #     self.fields['body'].label = 'Articulo'
-    #     self.fields['tags'].label = 'Etiquetas'
-    #     self.fields['platforms'].label = 'Plataformas'
-    #     self.fields['title'].widget.attrs.update({'class': 'form-control'})
-    #     self.fields['body'].widget.attrs.update({'class': 'form-control'})
-    #     self.fields['tags'].widget.attrs.update({'class': 'form-control'})
-    #     self.fields['platforms'].widget.attrs.update({'class': 'form-control'})
+    # email = forms.CharField(
+    #     label='',
+    #     widget=forms.TextInput(
+    #         attrs={
+    #             'class': 'form-control',
+    #             'placeholder': 'E-mail',
+    #             'value': 'asd@asd.com'
+    #         }
+    #     )
+    # )
+    # name = forms.CharField(label='', widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre', 'value': 'asd'}))
+    # website = forms.CharField(label='', widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Sitio Web', 'value': 'asd.com'}))
+    message = forms.CharField(label='', widget=forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Comentario', 'value': 'asd asd asd asd asd dasd'}))
 
-    # class Meta:
-    #     model = Blog
-    #     fields = ('image', 'title', 'body', 'tags', 'platforms')
+    class Meta:
+        model = Comment
+        fields = ('message',)

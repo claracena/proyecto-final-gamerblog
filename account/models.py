@@ -56,7 +56,7 @@ class Account(AbstractBaseUser):
     REQUIRED_FIELDS = ['username']
 
     def __str__(self) -> str:
-        return self.username
+        return str(self.username)
 
     def get_profile_image_filename(self):
         return str(self.profile_image)[str(self.profile_image).index(f'profile_images/{self.pk}/'):]
