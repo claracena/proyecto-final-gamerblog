@@ -13,11 +13,11 @@
             <label for="profile_image">Imagen de Perfil</label><br>
             <input type="file" name="profile_image" accept="image/png, image/jpg, image/jpeg" /><br>
             <label for="fname">Nombre</label>
-            <input type="text" name="fname" class="form-control" maxlength="80" value="{{ request.user.fname }}">
+            <input type="text" name="fname" class="form-control" maxlength="80" value="{% if request.user.fname is not None %}{{ request.user.fname }}{% endif %}">
             <label for="lname">Apellido</label>
-            <input type="text" name="lname" class="form-control" maxlength="80" value="{{ request.user.lname }}">
+            <input type="text" name="lname" class="form-control" maxlength="80" value="{% if request.user.lname is not None %}{{ request.user.lname }}{% endif %}">
             <label for="bio">Biograf&iacute;a</label>
-            <textarea name="bio" class="form-control" rows="10">{{ request.user.bio }}</textarea>
+            <textarea name="bio" class="form-control" rows="10">{% if request.user.bio is not None %}{{ request.user.bio }}{% endif %}</textarea>
             <!-- <small class="text-danger">Necesario. Sirve para iniciar sesi&oacute;n.</small> -->
             <!-- <label for="password1">Nueva contrase&ntilde;a</label>
             <input type="password" name="password1" class="form-control" maxlength="80">

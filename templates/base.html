@@ -50,13 +50,10 @@
                         </a>
                         <ul class="nk-nav nk-nav-right d-none d-lg-table-cell" data-nav-mobile="#nk-nav-mobile">
                             <li>
-                                <a href="/"> Inicio </a>
+                                <a href="{% url 'blog' %}"> Inicio </a>
                             </li>
                             <li>
-                                <a href="{% url 'blog' %}"> Blog </a>
-                            </li>
-                            <li>
-                                <a href="/contactenos.html"> Cont&aacute;ctenos </a>
+                                <a href="#"> Cont&aacute;ctenos </a>
                             </li>
                             <li>
                                 <a href="#"> Acerca de Nosotros </a>
@@ -79,7 +76,7 @@
                                         <a href="{% url 'profile' %}"> Mi Perfil </a>
                                     </li>
                                     <li>
-                                        <a href="{% url 'post_form' %}"> Nuevo Articulo </a>
+                                        <a href="{% url 'article-post' %}"> Nuevo Articulo </a>
                                     </li>
                                     <li>
                                         <a href="{% url 'logout' %}"> Logout </a>
@@ -113,7 +110,7 @@
         <div id="nk-nav-mobile" class="nk-navbar nk-navbar-side nk-navbar-right-side nk-navbar-overlay-content d-lg-none">
             <div class="nano">
                 <div class="nano-content">
-                    <a href="index.html" class="nk-nav-logo">
+                    <a href="{% url 'blog' %}" class="nk-nav-logo">
                         <img src="{% static 'assets/images/logo.svg' %}" alt="" width="120">
                     </a>
                     <div class="nk-navbar-mobile-content">
