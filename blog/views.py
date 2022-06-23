@@ -72,6 +72,8 @@ def DetailViewComment(request, pk):
             form.instance.blog_id = pk
             form.instance.author_id = request.user.id
             form.save()
+            # return render(request, 'blog/blog_detail.html', context=context)
+            return redirect('article', pk=pk)
 
     return render(request, 'blog/blog_detail.html', context=context)
 
