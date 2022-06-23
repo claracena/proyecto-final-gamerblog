@@ -1,17 +1,18 @@
 from django import forms
 from .models import Tag, Platform, Blog
+from ckeditor.widgets import CKEditorWidget
 
 class ArticleForm(forms.ModelForm):
 
-    image = forms.FileField(label='Imágen')
     title = forms.CharField(label='Título', widget=forms.TextInput(attrs={'class': 'form-control'}))
-    body = forms.CharField(label='Artículo', widget=forms.Textarea(attrs={'class': 'form-control'}))
+    body = forms.CharField(widget=CKEditorWidget())
     tags = forms.ModelMultipleChoiceField(label='Etiquetas', queryset=Tag.objects.all().distinct(), widget=forms.CheckboxSelectMultiple())
     platforms = forms.ModelMultipleChoiceField(label='Plataformas', queryset=Platform.objects.all().distinct(), widget=forms.CheckboxSelectMultiple())
+    image = forms.FileField(label='Imágen')
 
     class Meta:
         model = Blog
-        fields = ('image', 'title', 'body', 'tags', 'platforms')
+        fields = ('title', 'body', 'tags', 'platforms', 'image')
 
         # widgets = {
         #     'title': forms.TextInput(attrs={'class': 'form-control'}),

@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'staticapp.apps.StaticappConfig',
     'account.apps.AccountConfig',
     'blog.apps.BlogConfig',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -160,3 +162,22 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'assets', 'media')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+#CKEDITOR
+# STATIC_ROOT = BASE_DIR / 'static'
+
+CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/'
+CKEDITOR_UPLOAD_PATH = '/uploads/'
+
+# CKEDITOR_CONFIGS = {
+#     'awesome_ckeditor': {
+#         'toolbar': 'Basic',
+#     },
+# }
+CKEDITOR_CONFIGS = {
+    'default': {
+        'height': 300,
+        'width': 1080,
+    },
+}
