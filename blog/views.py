@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from django.http import Http404
+from django.db.models import Q
 from .models import Blog, Comment
 from .forms import ArticleForm, CommentForm
 
@@ -59,7 +60,7 @@ class ArticleUpdateView(LoginRequiredMixin, UpdateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
-def DetailViewComment(request, pk):
+def detailViewComment(request, pk):
     articulo = Blog.objects.get(id=pk)
     comments = Comment.objects.filter(blog=pk).select_related('author').order_by('-id')
     count = comments.count()
@@ -76,6 +77,14 @@ def DetailViewComment(request, pk):
             return redirect('article', pk=pk)
 
     return render(request, 'blog/blog_detail.html', context=context)
+
+def searchView(request):
+    if request.method == 'POST':
+        search_text = request.POST.get('search')
+        results = Blog.objects.filter(Q(title__contains=search_text) | Q(body__contains=search_text))
+        return render(request, 'blog/blog_search.html', {'results': results})
+
+    return render(request, 'blog/blog_search.html')
 
 
 
