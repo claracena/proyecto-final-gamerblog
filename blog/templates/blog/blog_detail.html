@@ -17,7 +17,10 @@
                         <div style="display: inline-flex;">
                             <h1 class="nk-post-title h3"> {{ blog.title }}</h1>
                             <a href="javascript:void(0);" style="margin-left: 10px; font-size: 1.2rem;" data-bs-toggle="tooltip" data-bs-placement="top" title="Acceso directo a este art&iacute;culo" onclick="Copy();"><span class="fa fa-link"></span></a>
-                            <a href="javascript:void(0);" style="margin-left: 10px; font-size: 1.2rem;" data-bs-toggle="tooltip" data-bs-placement="top" title="Marca que te gusta este art&iacute;culo" onclick="Copy();"><span class="fa fa-thumbs-up"></span></a>
+                            <!-- <a href="javascript:void(0);" style="margin-left: 10px; font-size: 1.2rem;" data-bs-toggle="tooltip" data-bs-placement="top" title="Marca que te gusta este art&iacute;culo" onclick="Copy();"><span class="fa fa-thumbs-up"></span></a> -->
+                            {% if request.user.id is blog.author.id %}
+                            <a href="{% url 'article-update' blog.id %}" style="margin-left: 10px; font-size: 1.2rem;" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar este art&iacute;culo" onclick="Copy();"><span class="fa fa-pen"></span></a>
+                            {% endif %}
                         </div>
                         <!-- <h1 class="nk-post-title h5">Esto es un subtitulo</h1> -->
                         <div class="nk-post-by">
@@ -26,15 +29,6 @@
                                 {% for tag in blog.tags.all %}
                                 <span class="custom-tag">{{ tag }}</span>
                                 {% endfor %}
-                            <!-- <span class="custom-tag">Acci&oacute;n</span>
-                            <span class="custom-tag">Aventura</span>
-                            <span class="custom-tag">MMO</span>
-                            <span class="custom-tag">FPS</span>
-                            <span class="custom-tag">RPG</span>
-                            <span class="custom-tag">Racing</span>
-                            <span class="custom-tag">Fantas&iacute;a</span> -->
-                                <!-- <span class="custom-tag-before"></span><span class="custom-tag">Acci&oacute;n</span>
-                                <span class="custom-tag-before"></span><span class="custom-tag">Aventura</span> -->
                             </div>
                         </div>
                         <div class="nk-gap"></div>
@@ -52,42 +46,33 @@
                     </div>
                 </div>
 
+                {% if count > 0 %}
                 <div id="comments"></div>
-                <h3 class="nk-decorated-h-2"><span><span class="text-main-1">3</span> Comentarios</span></h3>
+                <h3 class="nk-decorated-h-2"><span><span class="text-main-1">{{ count }}</span>{% if count == 1 %} Comentario{% else %} Comentarios{% endif %}</span></h3>
                 <div class="nk-gap"></div>
                 <div class="nk-comments">
+                    {% for comment in comments %}
                     <div class="nk-comment">
                         <div class="nk-comment-meta">
-                            <img src="assets/images/avatar-2.jpg" alt="Avatar" class="rounded-circle" width="35"><a href="#">Esteban "El Carry" Orozco</a> el 30 de febrero de 2022 <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 float-right">Responder</a>
+                            <img src="{{ comment.author.profile_image.url }}" alt="Avatar" class="rounded-circle" width="35"><a href="{% url 'user-profile' comment.author.id %}">{% if comment.author.fname == None %}{{ comment.author.username }}{% else %}{{ comment.author.fname }}{% endif %}</a> el {{ comment.comment_date|date:"d/m/Y" }}
                         </div>
                         <div class="nk-comment-text">
-                            <p>This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her in a moment, and found herself walking in at the front-door again.</p>
-                        </div>
-                        <div class="nk-comment">
-                            <div class="nk-comment-meta">
-                                <img src="assets/images/avatar-1.jpg" alt="Avatar" class="rounded-circle" width="35"><a href="#">Esteban "El Carry" Orozco</a> el 30 de febrero de 2022 <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 float-right">Responder</a>
-                            </div>
-                            <div class="nk-comment-text">
-                                <p>To her surprise, she lost sight of her in a moment, and found herself walking in at the front-door again.</p>
-                            </div>
+                            <p>{{ comment.message }}</p>
                         </div>
                     </div>
-                    <div class="nk-comment">
-                        <div class="nk-comment-meta">
-                            <img src="assets/images/avatar-3.jpg" alt="Avatar" class="rounded-circle" width="35"><a href="#">Esteban "El Carry" Orozco</a> el 30 de febrero de 2022 <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 float-right">Responder</a>
-                        </div>
-                        <div class="nk-comment-text">
-                            <p>The sight of the tumblers restored Bob Sawyer to a degree of equanimity which he had not possessed since his interview with his landlady. His face brightened up, and he began to feel quite convivial.</p>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
+                {% endif %}
 
+                {% if request.user.is_authenticated %}
                 <div class="nk-gap-2"></div>
                 <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Escribir</span> un comentario</span></h3>
                 <div class="nk-gap"></div>
                 <div class="nk-reply">
-                    <form action="#" class="nk-form" novalidate="novalidate">
-                        <div class="row sm-gap vertical-gap">
+                    <form action="" class="nk-form" method="POST">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <!-- <div class="row sm-gap vertical-gap">
                             <div class="col-md-4">
                                 <input type="email" class="form-control required" name="email" placeholder="E-mail *">
                             </div>
@@ -102,10 +87,14 @@
                         <textarea class="form-control required" name="message" rows="5" placeholder="Mensaje *" aria-required="true"></textarea>
                         <div class="nk-gap-1"></div>
                         <div class="nk-form-response-success"></div>
-                        <div class="nk-form-response-error"></div>
-                        <button class="nk-btn nk-btn-rounded nk-btn-color-main-1">Enviar comentario</button>
+                        <div class="nk-form-response-error"></div> -->
+                        <button type="submit" class="nk-btn nk-btn-rounded nk-btn-color-main-1">Enviar comentario</button>
                     </form>
                 </div>
+                {% else %}
+                <div class="nk-gap-2"></div>
+                <p>Debe estar registrado para dejar un comentario. Por favor <a href="{% url 'login' %}?next=/blog/article/{{ blog.id }}">ingrese</a> con su email y contraseña. Si no tiene cuenta aún, por favor <a href="{% url 'register' %}?next=/blog/article/{{ blog.id }}">regístrese</a> gratuitamente.</p>
+                {% endif %}
             </div>
         <!-- </div> -->
     </div>

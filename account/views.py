@@ -8,7 +8,7 @@ from account.models import *
 def registerView(request, *args, **kwargs):
     user = request.user
     if user.is_authenticated:
-        return redirect('home')
+        return redirect('blog')
 
     context = {}
 
@@ -23,7 +23,7 @@ def registerView(request, *args, **kwargs):
             destination = get_redirect_if_exists(request)
             if destination:
                 return redirect(destination)
-            return redirect('home')
+            return redirect('blog')
         else:
             messages.error(request, 'Complete correctamente los datos')
             context['registration_form'] = form
@@ -32,14 +32,14 @@ def registerView(request, *args, **kwargs):
 
 def logoutView(request):
     logout(request)
-    return redirect('home')
+    return redirect('blog')
 
 def loginView(request, *args, **kwargs):
     context = {}
 
     user = request.user
     if user.is_authenticated:
-        return redirect('home')
+        return redirect('blog')
     if request.POST:
         email = request.POST['email']
         password = request.POST['password']
@@ -49,7 +49,7 @@ def loginView(request, *args, **kwargs):
             destination = get_redirect_if_exists(request)
             if destination:
                 return redirect(destination)
-            return redirect('home')
+            return redirect('blog')
         else:
             messages.error(request, 'Usuario o contraseña incorrectos')
             return render(request, 'account/login.html', context)
@@ -74,7 +74,7 @@ def profileView(request):
 @login_required(login_url='login')
 def profileEdit(request, *args, **kwargs):
     if not request.user.is_authenticated:
-        return redirect('home')
+        return redirect('blog')
 
     if request.method == 'POST':
         form = EditProfileForm(request.POST, request.FILES, instance=request.user)
@@ -95,6 +95,6 @@ def userProfile(request, pk):
         destination = get_redirect_if_exists(request)
         if destination:
             return redirect(destination)
-        return redirect('home')
+        return redirect('blog')
 
     return render(request, 'account/user-profile.html', {'data': user})
