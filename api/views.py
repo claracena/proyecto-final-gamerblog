@@ -3,8 +3,8 @@ from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from blog.models import Blog, Comment
-from api.serializers import BlogSerializer, CommentSerializer
+from blog.models import Blog, Comment, Tag, Platform
+from api.serializers import BlogSerializer, CommentSerializer, TagSerializer, PlatformSerializer
 
 @api_view(['GET'])
 def apiOverview(request):
@@ -12,6 +12,8 @@ def apiOverview(request):
         'List': '/blog-list/',
         'Detail View': '/blog-detail/<int:pk>/',
         'Comments': '/comments/<int:pk>/',
+        'Tags List': '/tag-list/',
+        'Platforms List': '/platform-list/',
     }
     return Response(api_urls)
 
@@ -31,4 +33,16 @@ def blogDetail(request, pk):
 def commentDetail(request, pk):
     comment = Comment.objects.filter(blog_id=pk)
     serializer = CommentSerializer(comment, many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def tagList(request):
+    tags = Tag.objects.all()
+    serializer = TagSerializer(tags, many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def platformList(request):
+    platforms = Platform.objects.all()
+    serializer = PlatformSerializer(platforms, many=True)
     return Response(serializer.data)
