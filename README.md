@@ -18,7 +18,6 @@ To Do:
 Apps:
 * account: Manejo de sesión, ver el perfil de cualquier usuario y editar el propio
 * blog: App para mostrar, agregar, editar o eliminar artículos del blog (con comentarios individuales)
-* messenger: App para mensajería privada entre usuarios
 * contact: Contactenos
 
    Páginas estáticas (en una sola app llamada staticapp):
