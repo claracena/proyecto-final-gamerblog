@@ -8186,3 +8186,12 @@ form > #id_platforms > div {
 .custom-about-box {
     margin-bottom: 20px;
 }
+
+.custom-modal-bg {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    border: #f8991d 2px solid !important;
+}
+
+.custom-orange-border {
+    border: #f8991d 2px solid !important;
+}
