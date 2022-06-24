@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %} Resultado de búsqueda {% endblock %}
+
+{% block content %}
+{% load static %}
+
+<main>
+    <section id="search" class="light-bg">
+        <div class="container inner-top-sm inner-bottom justify-content-center">
+            <div class="custom-article-container custom-extra-padding">
+                <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Resultado de</span> B&uacute;squeda</span></h3>
+                {% if not results %}
+                <br>
+                <h4 class="text-center">No se encontraron resultados para su b&uacute;squeda</h4>
+                {% else %}
+                {% for result in results %}
+                <div class="nk-blog-post">
+                    <a href="{% url 'article' result.id %}" class="nk-post-img">
+                        <img src="{% get_media_prefix %}{{ result.image }}" alt="{{ result.title }}" style="margin-bottom: -1px; width: -webkit-fill-available; height: 100px; object-fit: cover; object-position: 100% 50%;" />
+                        <span class="nk-post-comments-count">{{ result.articles.all|length }}</span>
+                    </a>
+                    <div class="custom-index-card-container">
+                        <div class="nk-gap-2"></div>
+                        <div class="row vertical-gap">
+                            <div class="col-md-7 col-lg-8">
+                                <h2 class="nk-post-title h4">
+                                    <a href="{% url 'article' result.id %}">{{ result.title }}</a>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <div class="nk-pagination nk-pagination-center">
+        {% if results.has_other_pages %}
+            <!-- <a href="#" class="nk-pagination-prev"><span class="fa fa-arrow-left"></span></a> -->
+            {% if results.has_previous %}
+            <a href="?search={{search}}&page=1" class="nk-pagination-prev"><span class="fa fa-arrow-left"></span></a> <a href="?search={{search}}&page={{ results.previous_page_number }}">Anterior</a> &nbsp; |
+            {% endif %}
+            &nbsp;
+            <span class="nk-pagination-current">
+                Página {{ results.number }} de {{ results.paginator.num_pages }}
+            </span>
+            &nbsp;
+            <!-- <a href="#" class="nk-pagination-next"><span class="fa fa-arrow-right"></span></a> -->
+            {% if results.has_next %}
+                | &nbsp; <a href="?search={{search}}&page={{ results.next_page_number }}">Siguiente</a> <a href="?search={{search}}&page={{ results.paginator.num_pages }}" class="nk-pagination-next"><span class="fa fa-arrow-right"></span></a>
+            {% endif %}
+        {% endif %}
+    </div>
+
+</main>
+
+
+{% endblock %}
