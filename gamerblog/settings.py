@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'about.apps.AboutConfig',
+    'api.apps.ApiConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
