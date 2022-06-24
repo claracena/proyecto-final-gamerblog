@@ -8206,3 +8206,12 @@ form > #id_platforms > div {
     border-color: #f8991d;
     color: black;
 }
+
+.custom-modal-bg {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    border: #f8991d 2px solid !important;
+}
+
+.custom-orange-border {
+    border: #f8991d 2px solid !important;
+}

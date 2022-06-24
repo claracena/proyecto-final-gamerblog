@@ -5,9 +5,9 @@ class BlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = Blog
         # fields = '__all__'
-        fields = ('id', 'title', 'pub_date', 'body', 'image')
+        fields = ('id', 'title', 'pub_date', 'body', 'image', 'tags', 'platforms')
 
 class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
-        fields = ('blog', 'comment_date', 'message', 'author')
+        fields = ('blog', 'comment_date', 'message')
