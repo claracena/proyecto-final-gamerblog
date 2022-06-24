@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container custom-extra-height">
+    <div class="custom-article-container custom-extra-padding">
+        <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Contactanos</span></h3>
+            <form action='' method='POST'>
+                <small>*Todos los campos obligatorios</small>
+                <div class="nk-gap"></div>
+
+                {% csrf_token %}
+                
+                {{ form.as_p }}
+                
+                <small>Contactanos por email a: <a href="mailto:contacto@gamerblog.com">contacto@gamerblog.com</a></small>
+                <div class="nk-gap"></div>
+                <input type='submit' class="nk-btn nk-btn-rounded nk-btn-color-main-1" value='Enviar'>
+
+            </form>
+    </div>
+</div>
+
+
+{% endblock %}
