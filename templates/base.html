@@ -159,8 +159,7 @@
                         </button>
                         <h4 class="mb-0">Buscar</h4>
                         <div class="nk-gap-1"></div>
-                        <form action="{% url 'search' %}" class="nk-form nk-form-style-1" method="POST">
-                            {% csrf_token %}
+                        <form action="{% url 'search' %}" class="nk-form nk-form-style-1" method="GET">
                             <input type="text" value="" name="search" class="form-control" placeholder="Ingrese su b&uacute;squeda y presione Enter" autofocus />
                         </form>
                     </div>

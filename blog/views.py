@@ -9,6 +9,7 @@ from django.http import Http404
 from django.db.models import Q
 from .models import Blog, Comment
 from .forms import ArticleForm, CommentForm
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 class HomeView(ListView):
     paginate_by = 3
@@ -79,10 +80,20 @@ def detailViewComment(request, pk):
     return render(request, 'blog/blog_detail.html', context=context)
 
 def searchView(request):
-    if request.method == 'POST':
-        search_text = request.POST.get('search')
+    if request.GET.get('search') is not None:
+        search_text = request.GET.get('search')
         results = Blog.objects.filter(Q(title__contains=search_text) | Q(body__contains=search_text))
-        return render(request, 'blog/blog_search.html', {'results': results})
+        page = request.GET.get('page', 1)
+        paginator = Paginator(results, 5)
+
+        try:
+            posts = paginator.page(page)
+        except PageNotAnInteger:
+            posts = paginator.page(1)
+        except EmptyPage:
+            posts = paginator.page(paginator.num_pages)
+
+        return render(request, 'blog/blog_search.html', {'results': posts, 'search': search_text})
 
     return render(request, 'blog/blog_search.html')
 
