@@ -32,13 +32,3 @@ To Do:
 * ~~Sistema de busqueda~~
 * ~~Contactenos~~
 * ~~Acerca de nosotros~~
-
----
-Apps:
-* account: Manejo de sesión, ver el perfil de cualquier usuario y editar el propio
-* blog: App para mostrar, agregar, editar o eliminar artículos del blog (con comentarios individuales)
-* contact: Contactenos
-
-   Páginas estáticas (en una sola app llamada staticapp):
-   * home: App principal (página de inicio y noticias estáticas por ahora)
-   * about us
