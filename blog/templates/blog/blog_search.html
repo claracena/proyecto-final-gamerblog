@@ -36,6 +36,24 @@
         </div>
     </section>
 
+    <div class="nk-pagination nk-pagination-center">
+        {% if results.has_other_pages %}
+            <!-- <a href="#" class="nk-pagination-prev"><span class="fa fa-arrow-left"></span></a> -->
+            {% if results.has_previous %}
+            <a href="?search={{search}}&page=1" class="nk-pagination-prev"><span class="fa fa-arrow-left"></span></a> <a href="?search={{search}}&page={{ results.previous_page_number }}">Anterior</a> &nbsp; |
+            {% endif %}
+            &nbsp;
+            <span class="nk-pagination-current">
+                Página {{ results.number }} de {{ results.paginator.num_pages }}
+            </span>
+            &nbsp;
+            <!-- <a href="#" class="nk-pagination-next"><span class="fa fa-arrow-right"></span></a> -->
+            {% if results.has_next %}
+                | &nbsp; <a href="?search={{search}}&page={{ results.next_page_number }}">Siguiente</a> <a href="?search={{search}}&page={{ results.paginator.num_pages }}" class="nk-pagination-next"><span class="fa fa-arrow-right"></span></a>
+            {% endif %}
+        {% endif %}
+    </div>
+
 </main>
 
 
