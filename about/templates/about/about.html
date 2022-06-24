@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %} Acerca de nosotros {% endblock %}
+
+{% block content %}
+{% load static %}
+
+<main>
+    <section id="contact" class="light-bg">
+        <div class="container inner-top-sm inner-bottom justify-content-center">
+            <div class="custom-article-container custom-extra-padding">
+            
+                <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Acerca</span> de Nosotros</span></h3>
+                {% for member in result %}
+                <div class="custom-about-box">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="{{ member.profile_image.url }}" class="img-fluid rounded-circle" alt="{{ member.username }}">
+                        </div>
+                        <div class="col-md-8">
+                            <h4>{{ member.fname }} "{{ member.username }}" {{ member.lname }}</h4>
+                            <p>{{ member.bio|truncatechars:400|striptags }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+
+{% endblock %}

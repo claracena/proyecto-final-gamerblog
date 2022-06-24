@@ -1,11 +1,8 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy, reverse
 from django.views.generic.edit import FormMixin
-from django.contrib.auth.decorators import login_required
-# from django.utils.decorators import method_decorator
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
-from django.http import Http404
 from django.db.models import Q
 from .models import Blog, Comment
 from .forms import ArticleForm, CommentForm
@@ -96,104 +93,3 @@ def searchView(request):
         return render(request, 'blog/blog_search.html', {'results': posts, 'search': search_text})
 
     return render(request, 'blog/blog_search.html')
-
-
-
-
-
-
-
-
-    # def get_success_url(self):
-    #     return reverse_lazy('article', kwargs={'pk': self.object.pk})
-
-    # def get_object(self):
-    #     try:
-    #         my_object = Blog.objects.get(id=self.kwargs.get('pk'))
-    #         return my_object
-    #     except self.model.DoesNotExist:
-    #         raise Http404("No MyModel matches the given query.")
-
-    # def get_context_data(self, *args, **kwargs):
-    #     context = super(DetailView, self).get_context_data(*args, **kwargs)
-    #     context['form'] = self.form_class(instance=self.object)
-    #     return context
-    
-    # def post(self, request, *args, **kwargs):
-    #     self.object = self.get_object()
-    #     form = self.form_class(instance=self.object)
-    #     if form.is_valid():
-    #         return self.form_valid(form)
-    #     else:
-    #         return reverse_lazy('article', kwargs={'pk': self.object.pk})
-
-    # def form_valid(self, form):
-    #     form.save()
-    #     return super(DetailView, self).form_valid(form)
-
-
-
-
-
-
-
-
-    # def get_context_data(self, **kwargs):
-    #     context = super(ArticleDetailView, self).get_context_data(**kwargs)
-    #     context['form'] = CommentForm
-    #     return context
-
-
-
-
-
-    # def get_form(self):
-    #     form = self.form_class(instance=self.object) # instantiate the form
-
-    #     return form
-
-    # def get_context_data(self, **kwargs):
-    #     context = super(ArticleDetailView, self).get_context_data(**kwargs)
-    #     context.update({
-    #         'form': self.get_form(), # get the form instance
-    #     })
-
-    #     return context
-
-    # def form_valid(self, form):
-    #     return super().form_valid(form)
-
-    # def form_valid(self, form):
-    #     form.instance.author = self.request.user
-    #     return super().form_valid(form)
-
-    # @method_decorator(login_required)
-    # def dispatch(self, *args, **kwargs):
-    #     return super(ArticleCreateView, self).dispatch(*args, **kwargs)
-
-    # def get_queryset(self):
-    #     return Blog.objects.filter(author=self.request.user)
-
-# lista de posts
-# def blog(request):
-#     post = Blog.objects.all()
-#     context = {'post': post}
-#     return render(request, 'blog/blog.html', context=context)
-
-# # formulario para crear posts
-# @login_required(login_url='login')
-# def post_form(request):
-#     if request.method == 'POST':
-#         form = PostForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             formx = form.save(commit=False)
-#             formx.save()
-#             return redirect('blog')
-#         else:
-#             return render(request, 'blog/post_form.html')
-#     return render(request, 'blog/post_form.html')
-
-# def article(request,pk):
-    # post = Blog.objects.get(id=pk)
-    # context = {'post': post}
-    # return render(request, 'blog/article.html', context=context)
