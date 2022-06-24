@@ -59,7 +59,7 @@
                                 <a href="{% url 'about' %}"> Acerca de Nosotros </a>
                             </li>
                             <li>
-                                <a href="#" data-toggle="modal" data-target="#modalSearch">
+                                <a href="#" title="Buscador de artículos" data-toggle="modal" data-target="#modalSearch">
                                     <span class="fa fa-search"></span>
                                 </a>
                             </li>
@@ -157,7 +157,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span class="fa fa-times"></span>
                         </button>
-                        <h4 class="mb-0">Buscar</h4>
+                        <h4 class="mb-0">Buscar artículos</h4>
                         <div class="nk-gap-1"></div>
                         <form action="{% url 'search' %}" class="nk-form nk-form-style-1" method="GET">
                             <input type="text" value="" name="search" class="form-control" placeholder="Ingrese su b&uacute;squeda y presione Enter" autofocus />
