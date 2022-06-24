@@ -12,8 +12,8 @@ To Do:
 * ~~Pagina de perfil y mensajeria~~
 * ~~Paginas de error~~
 * ~~Sistema de busqueda~~
-* Contactenos
-* Acerca de nosotros
+* ~~Contactenos~~
+* ~~Acerca de nosotros~~
 ---
 Apps:
 * account: Manejo de sesión, ver el perfil de cualquier usuario y editar el propio
