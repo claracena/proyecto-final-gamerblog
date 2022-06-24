@@ -8167,6 +8167,12 @@ label {
     text-align-last: end;
 }
 
+.nk-btn-color-main-1 {
+    background-color: #f8991d;
+    border-color: #f8991d;
+    border-style: solid;
+}
+
 .nk-btn-color-main-1.hover, .nk-btn-color-main-1:hover {
     background-color: white !important;
     border-color: white !important;
@@ -8185,4 +8191,18 @@ form > #id_platforms > div {
 
 .custom-about-box {
     margin-bottom: 20px;
+}
+
+.django-ckeditor-widget {
+    width: 100% !important;
+}
+
+#cke_id_body {
+    width: auto !important;
+}
+
+.custom-submit-btn {
+    background-color: #f8991d;
+    border-color: #f8991d;
+    color: black;
 }

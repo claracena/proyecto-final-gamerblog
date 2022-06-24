@@ -13,8 +13,8 @@
                     {% csrf_token %}
                     {{ form.media }}
                     {{ form.as_p }}
-                        <div class="col">
-                            <input type='submit' class="btn btn-primary" value='Enviar'>
+                        <div class="col" style="padding-left: inherit;">
+                            <input type='submit' class="btn nk-btn-rounded nk-btn-color-main-1" value='Enviar'>
                         </div>
                         {% if messages %}
                         <div class="alert alert-danger" role="alert">
@@ -25,6 +25,12 @@
                         {% endif %}
                     </div>
                 </form>
+                <script>
+                    CKEDITOR.replace( 'message');
+                    CKEDITOR.config.allowedContent = true;
+                    CKEDITOR.config.removeFormatAttributes = '';
+                    CKEDITOR.config.resize_dir = 'both';
+                </script>
             </div>
         </div>
     </section>

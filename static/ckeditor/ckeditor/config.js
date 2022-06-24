@@ -6,5 +6,8 @@
 CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here. For example:
 	// config.language = 'fr';
-	// config.uiColor = '#141519';
+	config.uiColor = '#F8991D';
+	// config.resize_minWidth = 500;
+	config.width = 'auto';
+	config.editorplaceholder = 'Escriba el contenido de su artículo aquí...';
 };
