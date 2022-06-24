@@ -42,4 +42,4 @@ class Comment(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='comment_author', verbose_name='user', on_delete=models.CASCADE)
 
     def __str__(self):
-        return str(self.author)
+        return str(self.author) + " - " + str(self.blog) + " - " + str(self.message)

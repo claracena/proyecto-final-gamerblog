@@ -11,4 +11,4 @@ class Contact(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return str(self.name) + " " + str(self.last_name) + " - " + str(self.message)
