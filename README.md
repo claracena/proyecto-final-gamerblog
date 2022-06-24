@@ -3,15 +3,17 @@
 ### Marzo - Junio 2022
 ---
 To Do:
-* Terminar de dar formato al sitio en general
-* Logo
-* Pagina de inicio (falta algun header)
-* Pagina de posts individuales, acerca del autor y comentarios
-* Pagina para postear y cropeo de imagenes
-* Login y registro
-* Pagina de perfil y mensajeria
-* Pagina de notificaciones (su mensaje fue enviado, etc)
-* Paginas de error
+* ~~Terminar de dar formato al sitio en general~~
+* ~~Logo~~
+* ~~Pagina de inicio (falta algun header)~~
+* ~~Pagina de posts individuales~~, acerca del autor y ~~comentarios~~
+* ~~Pagina para postear y cropeo de imagenes~~
+* ~~Login y registro~~
+* ~~Pagina de perfil y mensajeria~~
+* ~~Paginas de error~~
+* ~~Sistema de busqueda~~
+* Contactenos
+* Acerca de nosotros
 ---
 Apps:
 * account: Manejo de sesión, ver el perfil de cualquier usuario y editar el propio
