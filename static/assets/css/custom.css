@@ -8,6 +8,7 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 .nk-main {
     overflow: hidden;
@@ -8050,10 +8051,11 @@ div.nk-error {
 }
 
 .custom-article-container {
-    background-color: rgba(18, 21, 26, 0.8);
+    background-color: rgb(18 21 26 / 87%);
     padding: 15px;
     /* margin: 0px 0 0 0; */
     border-radius: 5px;
+    box-shadow: #000 0px 0px 2px;
 }
 
 .custom-tag {
@@ -8237,7 +8239,3 @@ form > #id_platforms > div {
 #navbar {
     z-index: 1100;
 }
-
-/* #nk-navbar {
-    background-color: #f8991d;
-} */
