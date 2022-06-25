@@ -36,7 +36,7 @@
     {% with 'assets/images/bgs/'|add:bg as image_path %}
     <body style="background-image: url({% static image_path %});">
         {% endwith %}
-        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+        <button onclick="topFunction()" id="myBtn" title="Ir arriba"><div class="fas fa-angle-double-up"></div></button>
         
         <div id="wrap">
         <div id="main" class="container-flex clear-top">
@@ -231,19 +231,6 @@
         <script src="{% static 'assets/plugins/nk-share/nk-share.js' %}"></script>
         <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
         <script src="{% static 'assets/js/custom.js' %}"></script>
-        <script>
-            window.onscroll = function() {myFunction()};
-            var navbar = document.getElementById("navbar");
-            var sticky = navbar.offsetTop;
-            function myFunction() {
-            if (window.pageYOffset > sticky) {
-                navbar.classList.add("sticky")
-                $(".nk-navbar").css('background-color', '#000000e3')
-            } else {
-                navbar.classList.remove("sticky");
-                $(".nk-navbar").css('background-color', '#00000099')
-            }
-            }
-        </script>
+        <script>window.onscroll = function() {myFunction()};</script>
     </body>
 </html>

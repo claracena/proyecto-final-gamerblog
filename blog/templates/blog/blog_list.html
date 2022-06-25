@@ -11,7 +11,7 @@
     
     {% for post in object_list %}
 
-    <div class="nk-blog-post">
+    <div class="nk-blog-post shadow">
         <a href="{% url 'article' post.pk %}" class="nk-post-img">
             <img src="{% get_media_prefix %}{{ post.image }}" alt="{{ post.title }}" style="margin-bottom: -1px; width: -webkit-fill-available; height: 280px; object-fit: cover; object-position: 100% 50%;" />
             <span class="nk-post-comments-count">{{ post.articles.all|length }}</span>
