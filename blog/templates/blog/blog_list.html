@@ -56,7 +56,7 @@
         {% if page_obj.paginator.num_pages > 1 %}
         <!-- <a href="#" class="nk-pagination-prev"><span class="fa fa-arrow-left"></span></a> -->
         {% if page_obj.has_previous %}
-        <a href="?page=1" title="Primera página" class="nk-pagination-prev"><span class="fa fa-arrow-left"></span></a> <a href="?page={{ page_obj.previous_page_number }}">Anterior</a> &nbsp; |
+        <a href="?page=1" title="Primera página" class="nk-pagination-prev"><span class="fa fa-angle-double-left"></span></a> <a href="?page={{ page_obj.previous_page_number }}">Anterior</a> &nbsp; |
         {% endif %}
         &nbsp;
         <span class="nk-pagination-current">
@@ -65,7 +65,7 @@
         &nbsp;
         <!-- <a href="#" class="nk-pagination-next"><span class="fa fa-arrow-right"></span></a> -->
         {% if page_obj.has_next %}
-            | &nbsp; <a href="?page={{ page_obj.next_page_number }}">Siguiente</a> <a href="?page={{ page_obj.paginator.num_pages }}" title="Ultima página" class="nk-pagination-next"><span class="fa fa-arrow-right"></span></a>
+            | &nbsp; <a href="?page={{ page_obj.next_page_number }}">Siguiente</a> <a href="?page={{ page_obj.paginator.num_pages }}" title="Ultima página" class="nk-pagination-next"><span class="fa fa-angle-double-right"></span></a>
         {% endif %}
         {% endif %}
     </div>
