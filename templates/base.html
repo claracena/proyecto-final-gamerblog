@@ -41,7 +41,8 @@
         <div id="wrap">
         <div id="main" class="container-flex clear-top">
 
-        <header class="nk-header nk-header-opaque">
+        <div id="navbar">
+        <header class="nk-header shadow">
             <nav class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-autohide">
                 <div class="container">
                     <div class="nk-nav-table">
@@ -106,6 +107,7 @@
                 </div>
             </nav>
         </header>
+    </div>
 
         <div id="nk-nav-mobile" class="nk-navbar nk-navbar-side nk-navbar-right-side nk-navbar-overlay-content d-lg-none">
             <div class="nano">
@@ -229,5 +231,19 @@
         <script src="{% static 'assets/plugins/nk-share/nk-share.js' %}"></script>
         <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
         <script src="{% static 'assets/js/custom.js' %}"></script>
+        <script>
+            window.onscroll = function() {myFunction()};
+            var navbar = document.getElementById("navbar");
+            var sticky = navbar.offsetTop;
+            function myFunction() {
+            if (window.pageYOffset > sticky) {
+                navbar.classList.add("sticky")
+                $(".nk-navbar").css('background-color', '#000000e3')
+            } else {
+                navbar.classList.remove("sticky");
+                $(".nk-navbar").css('background-color', '#00000099')
+            }
+            }
+        </script>
     </body>
 </html>
