@@ -8,6 +8,7 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 .nk-main {
     overflow: hidden;
@@ -2276,7 +2277,7 @@ img.rounded {
     }
 }
 .nk-navbar {
-    position: relative;
+    position: sticky;
     padding: 27px 0;
     font-family: Montserrat, sans-serif;
     font-size: 1.07rem;
@@ -5236,9 +5237,10 @@ img.rounded {
 .nk-pagination {
     display: flex;
     flex-wrap: wrap;
-    font-size: 1.7rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: #fff;
+    text-shadow: #000 0px 0px 3px;
 }
 .nk-pagination .nk-pagination-next,
 .nk-pagination .nk-pagination-prev {
@@ -8032,15 +8034,16 @@ div.nk-error {
     bottom: 20px;
     right: 30px;
     z-index: 99;
-    font-size: 18px;
+    font-size: 25px;
     font-weight: 600;
     border: none;
     outline: none;
     background-color: #f8991d;
     color: white;
     cursor: pointer;
-    padding: 15px;
-    border-radius: 4px;
+    padding: 10px;
+    border-radius: 20px;
+    width: 58px;
 }
 
 #myBtn:hover {
@@ -8048,10 +8051,11 @@ div.nk-error {
 }
 
 .custom-article-container {
-    background-color: rgba(18, 21, 26, 0.8);
+    background-color: rgb(18 21 26 / 87%);
     padding: 15px;
     /* margin: 0px 0 0 0; */
     border-radius: 5px;
+    box-shadow: #000 0px 0px 2px;
 }
 
 .custom-tag {
@@ -8215,3 +8219,23 @@ form > #id_platforms > div {
 .custom-orange-border {
     border: #f8991d 2px solid !important;
 } 
+
+.nk-main {
+    padding-top: 120px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .nk-main {
+    padding-top: 60px;
+}
+
+#navbar {
+    z-index: 1100;
+}
