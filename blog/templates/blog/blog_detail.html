@@ -24,7 +24,7 @@
                         </div>
                         <!-- <h1 class="nk-post-title h5">Esto es un subtitulo</h1> -->
                         <div class="nk-post-by">
-                            <img src="{{ blog.author.profile_image.url }}" alt="Avatar" class="rounded-circle" width="35"> por <a href="{% url 'user-profile' blog.author.id %}">{% if blog.author.fname == None %}{{ blog.author.username }}{% else %}{{ blog.author.fname }}{% endif %}</a> el {{ blog.pub_date|date:'d/m/Y' }}
+                            <img src="{% static 'assets/media/' %}{{ blog.author.profile_image.url }}" alt="Avatar" class="rounded-circle" width="35"> por <a href="{% url 'user-profile' blog.author.id %}">{% if blog.author.fname == None %}{{ blog.author.username }}{% else %}{{ blog.author.fname }}{% endif %}</a> el {{ blog.pub_date|date:'d/m/Y' }}
                             <div class="nk-post-categories">
                                 {% for tag in blog.tags.all %}
                                 <span class="custom-tag">{{ tag }}</span>
@@ -57,7 +57,7 @@
                     {% for comment in comments %}
                     <div class="nk-comment">
                         <div class="nk-comment-meta">
-                            <img src="{{ comment.author.profile_image.url }}" alt="Avatar" class="rounded-circle" width="35"><a href="{% url 'user-profile' comment.author.id %}">{% if comment.author.fname == None %}{{ comment.author.username }}{% else %}{{ comment.author.fname }}{% endif %}</a> el {{ comment.comment_date|date:"d/m/Y" }}
+                            <img src="{% static 'assets/media/' %}{{ comment.author.profile_image.url }}" alt="Avatar" class="rounded-circle" width="35"><a href="{% url 'user-profile' comment.author.id %}">{% if comment.author.fname == None %}{{ comment.author.username }}{% else %}{{ comment.author.fname }}{% endif %}</a> el {{ comment.comment_date|date:"d/m/Y" }}
                         </div>
                         <div class="nk-comment-text">
                             <p>{{ comment.message }}</p>

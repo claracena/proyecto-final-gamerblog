@@ -68,7 +68,7 @@
                                 {% if request.user.is_authenticated %}
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                                        <img src="{{ request.user.profile_image.url }}" width="38" height="38" class="rounded-circle">
+                                        <img src="{% static 'assets/media/' %}{{request.user.profile_image}}" width="38" height="38" class="rounded-circle">
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-right custom-dropdown-menu">
                                         <li>
