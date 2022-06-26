@@ -340,9 +340,9 @@ html {
     font-size: 14px;
 }
 body {
-    font-family: "Open Sans", sans-serif;
-    line-height: 1.7;
-    letter-spacing: 0.015em;
+    font-family: "Open Sans", sans-serif !important;
+    line-height: 1.7 !important;
+    letter-spacing: 0.015em !important;
     word-wrap: break-word;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -8117,13 +8117,13 @@ div.nk-error {
     min-height: 700px !important;
 } */
 
-html, body {
+/* html, body {
     height: 100%;
-}
+} */
 
-#wrap {
+/* #wrap {
     min-height: 100%;
-}
+} */
 
 #main {
     overflow:auto;
@@ -8131,8 +8131,8 @@ html, body {
 }
 
 .footer {
-    position: relative;
-    margin-top: -70px; /* negative value of footer height */
+    position: fixed !important;
+    /* margin-top: -70px; */
     height: 70px;
     clear:both;
     padding-top:0px;
@@ -8221,7 +8221,7 @@ form > #id_platforms > div {
 } 
 
 .nk-main {
-    padding-top: 120px;
+    padding-top: 0px;
 }
 
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
@@ -8232,10 +8232,179 @@ form > #id_platforms > div {
 }
 
 /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .nk-main {
+/* .sticky + .nk-main {
     padding-top: 60px;
-}
+} */
 
 #navbar {
     z-index: 1100;
+}
+
+/* MENU!!!!! */
+
+.custom-top-menu {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: sticky;
+    padding: 27px 0;
+    font-family: Montserrat, sans-serif;
+    font-size: 1.07rem;
+    color: #fff;
+    transition: 0.3s background-color;
+    transition: 0.3s padding;
+    z-index: 1000;
+    will-change: background-color;
+}
+
+.custom-header {
+    /* position: absolute; */
+    display: block;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 0 !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(248,153,32,1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-nav-right {
+    text-align: right !important;
+    vertical-align: middle !important;
+}
+
+ul.navbar-nav-right {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: inline-block;
+}
+
+@media (max-width: 991px) {
+    ul.navbar-nav-right {
+        display: inline-flex;
+    }
+    #mobileMenuCustom {
+        text-align: right !important;
+    }
+}
+
+.navbar-nav-right > li {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px !important;
+}
+
+@media (min-width: 992px) {
+    .navbar-nav-right > li:last-child {
+        margin-right: 0 !important;
+    }
+}
+
+.navbar-nav-right > li > a {
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    transition: 0.15s color !important;
+    color: #FFFFFF !important;
+}
+
+.navbar-nav-right > li > a:hover,
+.navbar-nav-right > li > a:focus,
+.navbar-nav-right > li > a:active {
+    color: #f89920 !important;
+    text-decoration: none !important;
+}
+
+.custom-dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    color: white;
+    border-bottom: 6px solid #f8991d;
+}
+
+.custom-dropdown-menu > li > a {
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+    font-size: 1.15rem;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    transition: 0.15s color !important;
+}
+
+.custom-dropdown-menu > li > a:hover,
+.custom-dropdown-menu > li > a:active,
+.custom-dropdown-menu > li > a:focus {
+    color: #f8991d !important;
+    text-decoration: none !important;
+    background-color: transparent !important;
+}
+
+@media (max-width: 991px) {
+    .custom-seguir-leyendo-btn > a {
+        width: 100% !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .custom-seguir-leyendo-btn {
+        margin-top: 60px !important;
+    }
+}
+
+.post-platforms {
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 15px;
+    background-color: #292e38;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.custom-platform-tag {
+    background-color: #f8991d;
+    padding: 5px 10px;
+    color: #000000;
+    font-weight: 600;
+    border-radius: 5px;
+    line-height: 40px;
+}
+
+.custom-platform-tag:first-of-type {
+    margin-left: 10px;
+}
+
+.custom-platform-tag:not(:last-of-type) {
+    margin-right: 10px;
+}
+
+@media (max-width: 991px) {
+    .btn-comentario-custom {
+        width: 100% !important;
+    }
+    .nk-post-categories {
+        margin-top: 10px !important;
+        margin-bottom: 20px !important;
+    }
+    .custom-col-about {
+        margin-top: 20px !important;
+    }
+    .custom-title-mobile {
+        font-size: 1.25rem !important;
+    }
+    .nk-footer {
+        height: 55px !important;
+    }
+    .nk-copyright .nk-copyright-left {
+        padding-top: 15px !important;
+    }
+}
+
+.nk-footer {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.nk-copyright {
+    background-color: transparent !important;
 }

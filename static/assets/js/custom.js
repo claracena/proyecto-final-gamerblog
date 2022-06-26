@@ -24,9 +24,9 @@ $( document ).ready(function() {
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
-    var quill = new Quill('#editor', {
-        theme: 'snow'
-    });
+    // var quill = new Quill('#editor', {
+    //     theme: 'snow'
+    // });
 
 });
 
@@ -38,15 +38,17 @@ window.onscroll = function() {scrollFunction()};
 var navbar = document.getElementById("navbar");
 var sticky = navbar.offsetTop;
 function myFunction() {
-if (window.pageYOffset > sticky) {
-    navbar.classList.add("sticky") // para que se vea el navbar cuando se desplaza el scroll
-    $(".nk-navbar").css('background-color', '#000000f0') // para que se oscurezca el navbar cuando se desplaza el scroll
-    mybutton.style.display = "block"; // para que se vea el boton cuando se desplaza el scroll
-} else {
-    navbar.classList.remove("sticky");
-    $(".nk-navbar").css('background-color', '#00000099')
-    mybutton.style.display = "none";
-}
+    if (window.pageYOffset > sticky) {
+        navbar.classList.add("sticky") // para que se vea el navbar cuando se desplaza el scroll
+        $(".custom-top-menu").css('background-color', '#000000cc');
+        $(".custom-top-menu").css('padding', '10px'); // para que se oscurezca el navbar cuando se desplaza el scroll
+        mybutton.style.display = "block"; // para que se vea el boton cuando se desplaza el scroll
+    } else {
+        navbar.classList.remove("sticky");
+        $(".custom-top-menu").css('background-color', '#00000099');
+        $(".custom-top-menu").css('padding', '27px');
+        mybutton.style.display = "none";
+    }
 }
 
 // When the user clicks on the button, scroll to the top of the document

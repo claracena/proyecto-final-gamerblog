@@ -32,16 +32,19 @@
                             </div>
                         </div>
                         <div class="nk-gap"></div>
-                        <p>{{ blog.body|safe }}</p>
+                            {{ blog.body|safe }}
                         <div class="nk-gap"></div>
-                        <div class="nk-post-share">
-                            <span class="h5">Compartir este art&iacute;culo:</span>
-                            <ul class="nk-social-links-2">
+                        <div class="post-platforms">
+                            {% for platform in blog.platforms.all %}
+                                <span class="custom-platform-tag">{{ platform }}</span>
+                            {% endfor %}
+                            <!-- <span class="h5">Compartir este art&iacute;culo:</span> -->
+                            <!-- <ul class="nk-social-links-2">
                                 <li><span class="social-copy-link"><a href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top" title="Acceso directo a este art&iacute;culo" onclick="Copy();" style="color: #000000 !important;"><span class="fa fa-link"></span></a></span></li>
                                 <li><span class="nk-social-facebook" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartir en Facebook"><span class="fab fa-facebook"></span></span></li>
                                 <li><span class="nk-social-twitter" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartir en Twitter"><span class="fab fa-twitter"></span></span></li>
                                 <li><span class="nk-social-pinterest" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartir en Pinterest"><span class="fab fa-pinterest-p"></span></span></li>
-                            </ul>
+                            </ul> -->
                         </div>
                     </div>
                 </div>
@@ -72,23 +75,7 @@
                     <form action="" class="nk-form" method="POST">
                         {% csrf_token %}
                         {{ form.as_p }}
-                        <!-- <div class="row sm-gap vertical-gap">
-                            <div class="col-md-4">
-                                <input type="email" class="form-control required" name="email" placeholder="E-mail *">
-                            </div>
-                            <div class="col-md-4">
-                                <input type="text" class="form-control required" name="name" placeholder="Nombre *">
-                            </div>
-                            <div class="col-md-4">
-                                <input type="text" class="form-control" name="name" placeholder="Sitio Web">
-                            </div>
-                        </div>
-                        <div class="nk-gap-1"></div>
-                        <textarea class="form-control required" name="message" rows="5" placeholder="Mensaje *" aria-required="true"></textarea>
-                        <div class="nk-gap-1"></div>
-                        <div class="nk-form-response-success"></div>
-                        <div class="nk-form-response-error"></div> -->
-                        <button type="submit" class="nk-btn nk-btn-rounded nk-btn-color-main-1">Enviar comentario</button>
+                        <button type="submit" class="nk-btn nk-btn-rounded nk-btn-color-main-1 btn-comentario-custom">Enviar comentario</button>
                     </form>
                 </div>
                 {% else %}

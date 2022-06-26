@@ -16,14 +16,19 @@
             <img src="{% get_media_prefix %}{{ post.image }}" alt="{{ post.title }}" style="margin-bottom: -1px; width: -webkit-fill-available; height: 280px; object-fit: cover; object-position: 100% 50%;" />
             <span class="nk-post-comments-count">{{ post.articles.all|length }}</span>
         </a>
-        <div class="custom-index-card-container">
+        <div class="custom-index-card-container" style="min-height: 172px !important;">
             <div class="nk-gap-2"></div>
             <div class="row vertical-gap">
                 <div class="col-md-7 col-lg-8">
                     <h2 class="nk-post-title h4">
                         <a href="{% url 'article' post.pk %}">{{ post.title }}</a>
                     </h2>
-                    <div class="nk-gap"></div>
+                    <div class="nk-post-categories" style="float: left;">
+                        {% for tag in post.tags.all %}
+                        <span class="custom-tag">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    <div class="nk-gap-3"></div>
                     <div class="nk-post-text">
                         <p>{{ post.body|truncatechars:400|striptags|safe }}</p>
                     </div>
@@ -34,8 +39,7 @@
                         por <a href="{% url 'user-profile' post.author.id %}">{% if post.author.fname == None %}{{ post.author.username }}{% else %}{{ post.author.fname }}{% endif %}</a> <br />
                         {{ post.pub_date|date:'d/m/Y' }} <br><br>
                     </div>
-                    <div class="nk-gap-3"></div>
-                    <div class="text-right">
+                    <div class="text-right custom-seguir-leyendo-btn">
                         <a href="{% url 'article' post.pk %}" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1" style="line-height: 2 !important;">Seguir Leyendo</a>
                     </div>
                 </div>

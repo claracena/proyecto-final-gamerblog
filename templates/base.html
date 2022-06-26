@@ -9,7 +9,6 @@
         <meta name="description" content="Proyecto final del curso de Python de Coderhouse, comision 31075, de Aracena Cesar, Orozco Jose y Orozco Esteban" />
         <meta name="keywords" content="gaming, games, blog, python, django" />
         <meta name="author" content="Aracena Cesar, Orozco Jose y Orozco Esteban" />
-        <!-- <link rel="icon" type="image/png" href="{% static 'assets/images/favicon.png' %}" /> -->
         <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/favicon/apple-touch-icon.png' %}">
         <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/favicon/favicon-32x32.png' %}">
         <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicon/favicon-16x16.png' %}">
@@ -21,7 +20,7 @@
         <meta name="theme-color" content="#ffffff">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7cOpen+Sans:400,700" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap/dist/css/bootstrap.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap/dist/css/bootstrap.css' %}" />
         <script defer src="{% static 'assets/vendor/fontawesome-free/js/all.js' %}"></script>
         <script defer src="{% static 'assets/vendor/fontawesome-free/js/v4-shims.js' %}"></script>
         <link rel="stylesheet" href="{% static 'assets/vendor/ionicons/css/ionicons.min.css' %}" />
@@ -39,90 +38,65 @@
         <button onclick="topFunction()" id="myBtn" title="Ir arriba"><div class="fas fa-angle-double-up"></div></button>
         
         <div id="wrap">
-        <div id="main" class="container-flex clear-top">
+        <div id="main" class="container-flex clear-top" style="margin-top: 120px !important;">
 
-        <div id="navbar">
-        <header class="nk-header shadow">
-            <nav class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-autohide">
-                <div class="container">
-                    <div class="nk-nav-table">
-                        <a href="/" class="nk-nav-logo">
-                            <img src="{% static 'assets/images/logo-01.svg' %}" alt="GoodGames" width="199" />
+            <nav id="navbar" class="navbar navbar-expand-lg custom-header shadow fixed-top">
+                <div class="custom-top-menu">
+                    <div class="container">
+                        <a class="navbar-brand" href="/">
+                            <img src="{% static 'assets/images/logo-01.svg' %}" alt="Gamer Blog" width="199" class="d-inline-block align-text-top">
                         </a>
-                        <ul class="nk-nav nk-nav-right d-none d-lg-table-cell" data-nav-mobile="#nk-nav-mobile">
-                            <li>
-                                <a href="{% url 'blog' %}"> Inicio </a>
-                            </li>
-                            <li>
-                                <a href="{% url 'contact' %}"> Cont&aacute;ctenos </a>
-                            </li>
-                            <li>
-                                <a href="{% url 'about' %}"> Acerca de Nosotros </a>
-                            </li>
-                            <li>
-                                <a href="#" title="Buscador de artículos" data-toggle="modal" data-target="#modalSearch">
-                                    <span class="fa fa-search"></span>
-                                </a>
-                            </li>
-                            {% if request.user.is_authenticated %}
-                            <li class=" nk-drop-item">
-                                <a href="#">
-                                    <img src="{{ request.user.profile_image.url }}" width="38" height="38" class="rounded-circle">
-                                </a>
-                                <ul class="dropdown">
-                                    <li>
-                                        <p class="custom-menu-no-link">{{request.user.username}}</p>
-                                    </li>
-                                    <li>
-                                        <a href="{% url 'profile' %}"> Mi Perfil </a>
-                                    </li>
-                                    <li>
-                                        <a href="{% url 'article-post' %}"> Nuevo Articulo </a>
-                                    </li>
-                                    <li>
-                                        <a href="{% url 'logout' %}"> Logout </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            {% else %}
-                            <li>
-                                <a href="#" data-toggle="modal" data-target="#modalLogin">
-                                    <span class="fa fa-user"></span>
-                                </a>
-                            </li>
-                            {% endif %}
-                        </ul>
-                        <ul class="nk-nav nk-nav-right nk-nav-icons">
-                            <li class="single-icon d-lg-none">
-                                <a href="#" class="no-link-effect" data-nav-toggle="#nk-nav-mobile">
-                                    <span class="nk-icon-burger">
-                                        <span class="nk-t-1"></span>
-                                        <span class="nk-t-2"></span>
-                                        <span class="nk-t-3"></span>
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobileMenuCustom" aria-controls="mobileMenuCustom" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="mobileMenuCustom">
+                            <ul class="navbar-nav navbar-nav-right ml-auto mt-2 mt-lg-0">
+                                <li class="nav-item">
+                                    <a href="{% url 'blog' %}"> Inicio </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'contact' %}"> Cont&aacute;ctenos </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'about' %}"> Acerca de Nosotros </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" title="Buscador de artículos" data-toggle="modal" data-target="#modalSearch">
+                                        <span class="fa fa-search"></span>
+                                    </a>
+                                </li>
+                                {% if request.user.is_authenticated %}
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                                        <img src="{{ request.user.profile_image.url }}" width="38" height="38" class="rounded-circle">
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-right custom-dropdown-menu">
+                                        <li>
+                                            <p class="custom-menu-no-link">{{request.user.username}}</p>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="{% url 'profile' %}"> Mi Perfil </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="{% url 'article-post' %}"> Nuevo Articulo </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="{% url 'logout' %}"> Logout </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                {% else %}
+                                <li class="nav-item">
+                                    <a href="#" data-toggle="modal" data-target="#modalLogin">
+                                        <span class="fa fa-user"></span>
+                                    </a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                            </div>
                     </div>
                 </div>
             </nav>
-        </header>
-    </div>
-
-        <div id="nk-nav-mobile" class="nk-navbar nk-navbar-side nk-navbar-right-side nk-navbar-overlay-content d-lg-none">
-            <div class="nano">
-                <div class="nano-content">
-                    <a href="{% url 'blog' %}" class="nk-nav-logo">
-                        <img src="{% static 'assets/images/logo.svg' %}" alt="" width="120">
-                    </a>
-                    <div class="nk-navbar-mobile-content">
-                        <ul class="nk-nav">
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
         
         <div class="nk-main">
             <div class="nk-gap-2"></div>
@@ -138,7 +112,7 @@
         </div>
 
 
-        <footer class="nk-footer footer">
+        <footer class="nk-footer footer fixed-bottom">
             <div class="nk-copyright">
                 <div class="container">
                     <div class="nk-copyright-left">
@@ -149,10 +123,7 @@
             </div>
         </footer>
 
-        <!-- <img class="nk-page-background-top" src="{% static 'assets/images/bg-4.jpg' %}" alt="" /> -->
-        <!-- <img class="nk-page-background-bottom" src="{% static 'assets/images/bg-bottom-1.jpg' %}" alt="" /> -->
-
-        <div class="nk-modal modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="nk-modal modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 1111 !important;">
             <div class="modal-dialog modal-sm" role="document">
                 <div class="modal-content custom-modal-bg">
                     <div class="modal-body">
@@ -211,7 +182,7 @@
         <script src="{% static 'assets/vendor/gsap/src/minified/TweenMax.min.js' %}"></script>
         <script src="{% static 'assets/vendor/gsap/src/minified/plugins/ScrollToPlugin.min.js' %}"></script>
         <script src="{% static 'assets/vendor/popper.js/dist/umd/popper.min.js' %}"></script>
-        <script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.js' %}"></script>
         <script src="{% static 'assets/vendor/sticky-kit/dist/sticky-kit.min.js' %}"></script>
         <script src="{% static 'assets/vendor/jarallax/dist/jarallax.min.js' %}"></script>
         <script src="{% static 'assets/vendor/jarallax/dist/jarallax-video.min.js' %}"></script>
