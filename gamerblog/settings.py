@@ -163,6 +163,8 @@ STATICFILES_DIRS = [
     # BASE_DIR / "static",
 ]
 
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'assets', 'media')
 
 # Default primary key field type
