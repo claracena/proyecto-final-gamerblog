@@ -1,5 +1,3 @@
-from cProfile import label
-from tkinter import Widget
 from django import forms
 from .models import Contact
 
