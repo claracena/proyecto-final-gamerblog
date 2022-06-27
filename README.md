@@ -3,6 +3,12 @@
 ### Marzo - Junio 2022
 
 ---
+### Autores
+* César Aracena: Encargado de la creación del sistema de sesión, búsqueda y APIs
+* José Orozco: Encargado de la creación del sistema de blog y creación de nuevos artículos
+* Esteban Orozco: Encargado de la creación del sistema de contacto y acerca de nosotros
+
+---
 ### Descripción
 
 Este es el repositorio del proyecto final grupal del curso de Python de Coderhouse, comisión 31075, donde creamos un blog utilizando Django 4.0.4 y Python 3.10. El mismo cuenta con un listado de artículos en forma de blog que pueden ser vistos por cualquier visitante. Cuenta con un sistema de manejo de sesión propio de Django con el cual los visitantes pueden registrarse. Una vez iniciada su sesión, los visitantes pueden dejar comentarios en los artículos e inclusive escribir nuevos artículos.
@@ -10,25 +16,35 @@ Este es el repositorio del proyecto final grupal del curso de Python de Coderhou
 Además cuenta con un formulario de contacto, una página que muestra información de nosotros (los autores del proyecto) y un sistema de búsqueda que devuelve los artículos según las coincidencias en los títulos y contenido de los artículos. También hay un sistema de APIs que provee acceso al listado de artículos, detalles sobre un artículo en particular, listado de comentarios de un artíuclo en particular, lista de plataformas de los juegos y las etiquetas que se utilizan en cada artículo.
 
 ---
-### Como acceder al sitio
-El sitio estará subido en Heroku, y se puede acceder visitando la dirección xxxxxxxxxxxxxxxxxxxx
+### Hospedaje
+* Sitio: Heroku https://gamerblog.herokuapp.com/
+* Archivos estáticos y media: AWS S3 Buckets
+* Base de datos: AWS PostgreSQL RDS
 
 ---
-### Autores
-* César Aracena: Encargado de la creación del sistema de sesión, búsqueda y APIs
-* José Orozco: Encargado de la creación del sistema de blog y creación de nuevos artículos
-* Esteban Orozco: Encargado de la creación del sistema de contacto y acerca de nosotros
+#### Acceso restringido a administradores:
+- Admin
+
+#### Acceso restringido a cualquier usuario registrado:
+- Ver/Editar Mi Perfil
+- Realizar comentarios en los articulos del blog
+- Crear nuevo artículo (se dió permiso a todos los usuarios para poder probar el sistema)
+
+#### Acceso irrestricto:
+- Inicio / Blog
+- Artículo
+- Búsqueda
+- Perfil de usuarios
+- Acerca de nosotros
+- Contáctenos
+- APIs
 
 ---
-To Do:
-* ~~Terminar de dar formato al sitio en general~~
-* ~~Logo~~
-* ~~Pagina de inicio (falta algun header)~~
-* ~~Pagina de posts individuales, acerca del autor y comentarios~~
-* ~~Pagina para postear y cropeo de imagenes~~
-* ~~Login y registro~~
-* ~~Pagina de perfil y mensajeria~~
-* ~~Paginas de error~~
-* ~~Sistema de busqueda~~
-* ~~Contactenos~~
-* ~~Acerca de nosotros~~
+### APIs
+
+El sistema de API se puede acceder en https://gamerblog.herokuapp.com/api/ y tiene los siguientes endpoints:
+- Listado de artículos: https://gamerblog.herokuapp.com/api/blog-list/
+- Un artículo específico: https://gamerblog.herokuapp.com/api/blog-detail/<id del articulo>
+- Comentarios de un artículo: https://gamerblog.herokuapp.com/api/comments/<id del articulo>
+- Listado de etiquetas: https://gamerblog.herokuapp.com/api/tag-list/
+- Listado de plataformas: https://gamerblog.herokuapp.com/api/platform-list/
