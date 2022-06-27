@@ -79,7 +79,7 @@ def detailViewComment(request, pk):
 def searchView(request):
     if request.GET.get('search') is not None:
         search_text = request.GET.get('search')
-        results = Blog.objects.filter(Q(title__contains=search_text) | Q(body__contains=search_text))
+        results = Blog.objects.filter(Q(title__icontains=search_text) | Q(body__icontains=search_text))
         page = request.GET.get('page', 1)
         paginator = Paginator(results, 5)
 
