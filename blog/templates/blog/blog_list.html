@@ -35,7 +35,7 @@
                 </div>
                 <div class="col-md-5 col-lg-4">
                     <div class="nk-post-by">
-                        <img src="{% static 'assets/media/' %}{{ post.author.profile_image.url }}" alt="Avatar" class="rounded-circle" width="60" />
+                        <img src="{% static 'assets/media/' %}{{ post.author.profile_image }}" alt="Avatar" class="rounded-circle" width="60" />
                         por <a href="{% url 'user-profile' post.author.id %}">{% if post.author.fname == None %}{{ post.author.username }}{% else %}{{ post.author.fname }}{% endif %}</a> <br />
                         {{ post.pub_date|date:'d/m/Y' }} <br><br>
                     </div>
