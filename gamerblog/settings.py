@@ -168,14 +168,14 @@ if USE_S3:
     AWS_LOCATION = 'static'
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
 else:
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATIC_URL = 'static/'
-
-MEDIA_URL = 'static/assets/media/'
-
-if DEBUG:
-    MEDIA_URL = 'assets/media/'
+    MEDIA_URL = 'static/assets/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'assets', 'media')
+    if DEBUG:
+        MEDIA_URL = 'assets/media/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
@@ -183,8 +183,6 @@ STATICFILES_DIRS = [
 ]
 
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'assets', 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
