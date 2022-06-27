@@ -8186,6 +8186,7 @@ label {
 form > #id_tags,
 form > #id_platforms {
     display: inline-flex !important;
+    flex-wrap: wrap;
 }
 
 form > #id_tags > div,
@@ -8408,3 +8409,4 @@ ul.navbar-nav-right {
 .nk-copyright {
     background-color: transparent !important;
 }
+

@@ -31,6 +31,7 @@
         <link  rel="stylesheet" type="text/css" href="{% static 'assets/vendor/summernote/dist/summernote-bs4.css' %}" />
         <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
         <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}" />
+        <!-- <link rel="stylesheet" href="../../static/assets/css/custom.css" /> -->
     </head>
     {% with 'assets/images/bgs/'|add:bg as image_path %}
     <body style="background-image: url({% static image_path %});">
@@ -140,7 +141,7 @@
             </div>
         </div>
 
-        <div class="nk-modal modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="nk-modal modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 1111 !important;">
             <div class="modal-dialog modal-sm" role="document">
                 <div class="modal-content">
                     <div class="modal-body">
