@@ -15,20 +15,7 @@ class ArticleForm(forms.ModelForm):
         fields = ('title', 'body', 'tags', 'platforms', 'image')
 
 class CommentForm(forms.ModelForm):
-
-    # email = forms.CharField(
-    #     label='',
-    #     widget=forms.TextInput(
-    #         attrs={
-    #             'class': 'form-control',
-    #             'placeholder': 'E-mail',
-    #             'value': 'asd@asd.com'
-    #         }
-    #     )
-    # )
-    # name = forms.CharField(label='', widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre', 'value': 'asd'}))
-    # website = forms.CharField(label='', widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Sitio Web', 'value': 'asd.com'}))
-    message = forms.CharField(label='', widget=forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Comentario', 'value': 'asd asd asd asd asd dasd'}))
+    message = forms.CharField(label='', widget=forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Comentario'}))
 
     class Meta:
         model = Comment
