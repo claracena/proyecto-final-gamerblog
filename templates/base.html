@@ -34,7 +34,7 @@
         <!-- <link rel="stylesheet" href="../../static/assets/css/custom.css" /> -->
     </head>
     {% with 'assets/images/bgs/'|add:bg as image_path %}
-    <body style="background-image: url({% static image_path %});">
+    <body class="d-flex flex-column min-vh-100" style="background-image: url({% static image_path %});">
         {% endwith %}
         <button onclick="topFunction()" id="myBtn" title="Ir arriba"><div class="fas fa-angle-double-up"></div></button>
         
@@ -111,9 +111,24 @@
         </div>
         </div>
         </div>
+    </div>
 
+    <footer class="footer">
+        <div class="container">
+            Copyright &copy; 2022 <a href="#" target="_blank">GAMERBLOG</a>
+        </div>
+    </footer>
 
-        <footer class="nk-footer footer fixed-bottom">
+        <!-- <footer class="footer fixed-bottom">
+            <div class="container">
+                <div class="nk-copyright-left">
+                    Copyright &copy; 2022
+                    <a href="#" target="_blank">GAMERBLOG</a>
+                </div>
+            </div>
+        </footer> -->
+
+        <!-- <footer class="nk-footer footer fixed-bottom">
             <div class="nk-copyright">
                 <div class="container">
                     <div class="nk-copyright-left">
@@ -122,7 +137,7 @@
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer> -->
 
         <div class="nk-modal modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 1111 !important;">
             <div class="modal-dialog modal-sm" role="document">
