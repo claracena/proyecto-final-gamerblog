@@ -15,11 +15,14 @@ Este es el repositorio del proyecto final grupal del curso de Python de Coderhou
 
 Además cuenta con un formulario de contacto, una página que muestra información de nosotros (los autores del proyecto) y un sistema de búsqueda que devuelve los artículos según las coincidencias en los títulos y contenido de los artículos. También hay un sistema de APIs que provee acceso al listado de artículos, detalles sobre un artículo en particular, listado de comentarios de un artíuclo en particular, lista de plataformas de los juegos y las etiquetas que se utilizan en cada artículo.
 
+Elegimos extender el sistema de usuarios para que el ingreso sea utilizando una dirección de email como nombre de usuario.
+
 ---
 ### Hospedaje
 * Sitio: Heroku https://gamerblog.herokuapp.com/
 * Archivos estáticos y media: AWS S3 Buckets
 * Base de datos: AWS PostgreSQL RDS
+* Link a video en YouTube: https://youtu.be/VI_3vVYM08w
 
 ---
 #### Acceso restringido a administradores:
